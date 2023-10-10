@@ -13,12 +13,12 @@
         compatible = "zmk,combos";
 
         bracket {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <15 16>;
         };
 
         bracket_r {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <19 20>;
         };
     };
@@ -27,8 +27,29 @@
         love: love {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(I) &kp SPACE &kp L &kp O &kp V &kp E &kp SPACE &kp Y &kp O &kp U>;
+            bindings = <&none &kp LS(T) &kp H &kp I &kp S &kp SPACE &kp V &kp A &kp L &kp U &kp E &kp SPACE &kp W &kp I &kp L &kp L &kp SPACE &kp B &kp E &kp SPACE &kp U &kp S &kp E &kp D &kp SPACE &kp F &kp O &kp R &kp SPACE &kp B &kp I &kp N &kp D &kp I &kp N &kp G &kp SPACE &kp T &kp H &kp E &kp SPACE &kp M &kp A &kp C &kp R &kp O &kp SQT &kp S &kp SPACE &kp A &kp C &kp T &kp I &kp O &kp N &kp S &kp SPACE &kp I &kp N &kp SPACE &kp Y &kp O &kp U &kp R &kp SPACE &kp K &kp E &kp Y &kp M &kp A &kp P &kp SPACE &kp LPAR &kp E &kp DOT &kp G &kp DOT &kp SPACE &kp AMPS &kp N &kp E &kp W &kp UNDER &kp M &kp A &kp C &kp R &kp O &kp RPAR &kp SPACE &kp A &kp N &kp D &kp SPACE &kp S &kp H &kp O &kp U &kp L &kp D &kp SPACE &kp B &kp E &kp SPACE &kp U &kp N &kp I &kp Q &kp U &kp E &kp DOT &kp SPACE &kp LS(I) &kp T &kp SPACE &kp W &kp I &kp L &kp L &kp SPACE &kp A &kp L &kp S &kp O &kp SPACE &kp B &kp E &kp SPACE &kp U &kp S &kp E &kp D &kp SPACE &kp I &kp N &kp T &kp E &kp R &kp N &kp A &kp L &kp L &kp Y &kp SPACE &kp F &kp O &kp R &kp SPACE &kp T &kp H &kp E &kp SPACE &kp N &kp O &kp D &kp E &kp SPACE &kp N &kp A &kp M &kp E &kp SPACE &kp A &kp N &kp D &kp SPACE &kp L &kp A &kp B &kp E &kp L &kp SPACE &kp P &kp R &kp O &kp P &kp E &kp R &kp T &kp Y &kp COMMA &kp SPACE &kp W &kp H &kp I &kp C &kp H &kp SPACE &kp Y &kp O &kp U &kp SPACE &kp C &kp A &kp N &kp SPACE &kp C &kp U &kp S &kp T &kp O &kp M &kp I &kp Z &kp E &kp SPACE &kp L &kp A &kp T &kp E &kp R &kp DOT>;
             label = "LOVE";
+        };
+    };
+
+    behaviors {
+        hml: homewrow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homewrow_mods_left";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <6 7 9 8 10 11 23 22 35 34 33 21 20 19 18 30 31 32 41 40 39>;
+            tapping-term-ms = <(-1)>;
+        };
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <(-1)>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
         };
     };
 
@@ -52,10 +73,10 @@
 
         layer_4 {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F   &kp P   &kp B     &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp BSPC
-&trans     &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
-&kp LSHFT  &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                         &trans  &trans  &trans    &trans  &trans  &trans
+&kp TAB    &kp Q              &kp W         &kp F            &kp P        &kp B     &kp J   &kp L        &kp U             &kp Y         &kp SEMI            &kp BSPC
+&trans     &hml LEFT_SHIFT A  &hml LCTRL R  &hml LEFT_ALT S  &hml LCMD T  &kp G     &kp M   &hmr RCMD N  &hmr RIGHT_ALT E  &hmr RCTRL I  &hmr RIGHT_SHIFT O  &kp APOS
+&kp LSHFT  &kp Z              &kp X         &kp C            &kp D        &kp V     &kp K   &kp H        &kp COMMA         &kp DOT       &kp FSLH            &trans
+                                            &trans           &trans       &trans    &trans  &trans       &trans
             >;
         };
 
