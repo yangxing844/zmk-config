@@ -21,6 +21,26 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <19 20>;
         };
+
+        lb {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <4 3>;
+        };
+
+        rb {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <7 8>;
+        };
+
+        lf {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <3 2>;
+        };
+
+        rba {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <8 9>;
+        };
     };
 
     macros {
@@ -40,7 +60,8 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <6 7 9 8 10 11 23 22 35 34 33 21 20 19 18 30 31 32 41 40 39>;
-            tapping-term-ms = <(-1)>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
         };
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -48,8 +69,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <(-1)>;
+            tapping-term-ms = <250>;
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            flavor = "tap-preferred";
         };
     };
 
