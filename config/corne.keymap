@@ -41,6 +41,56 @@
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <8 9>;
         };
+
+        window {
+            bindings = <&kp LG(NUMBER_1)>;
+            key-positions = <36 1>;
+        };
+
+        m2 {
+            bindings = <&kp LG(NUMBER_2)>;
+            key-positions = <36 2>;
+        };
+
+        m3 {
+            bindings = <&kp LG(NUMBER_3)>;
+            key-positions = <36 3>;
+        };
+
+        m4 {
+            bindings = <&kp LG(NUMBER_4)>;
+            key-positions = <36 4>;
+        };
+
+        m5 {
+            bindings = <&kp LG(N5)>;
+            key-positions = <36 5>;
+        };
+
+        m6 {
+            bindings = <&kp LG(NUMBER_6)>;
+            key-positions = <36 6>;
+        };
+
+        m7 {
+            bindings = <&kp LG(N7)>;
+            key-positions = <36 7>;
+        };
+
+        m8 {
+            bindings = <&kp LG(N8)>;
+            key-positions = <36 8>;
+        };
+
+        m9 {
+            bindings = <&kp LG(N9)>;
+            key-positions = <36 9>;
+        };
+
+        m0 {
+            bindings = <&kp LG(NUMBER_1)>;
+            key-positions = <36 10>;
+        };
     };
 
     macros {
