@@ -200,8 +200,8 @@
         layer_3 {
             bindings = <
 &kp GRAVE  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans     &tog 0        &tog 1        &tog 2        &trans        &trans          &trans  &trans  &trans  &trans  &trans   &trans
-&trans     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans   &trans
+&trans     &tog 0        &tog 1        &tog 2        &trans        &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans   &trans
+&trans     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans   &trans
                                        &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
