@@ -155,7 +155,7 @@
 &kp TAB    &kp Q              &kp W         &kp F            &kp P        &kp B     &kp J   &kp L        &kp U             &kp Y         &kp SEMI            &kp BSPC
 &trans     &hml LEFT_SHIFT A  &hml LCTRL R  &hml LEFT_ALT S  &hml LCMD T  &kp G     &kp M   &hmr RCMD N  &hmr RIGHT_ALT E  &hmr RCTRL I  &hmr RIGHT_SHIFT O  &kp APOS
 &kp LSHFT  &kp Z              &kp X         &kp C            &kp D        &kp V     &kp K   &kp H        &kp COMMA         &kp DOT       &kp FSLH            &trans
-                                            &trans           &trans       &trans    &trans  &trans       &trans
+                                            &trans           &mo 3        &trans    &trans  &mo 4        &trans
             >;
         };
 
