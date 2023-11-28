@@ -143,10 +143,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y       &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&mt LCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H       &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N       &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                &kp LGUI  &mo 3  &kp SPACE    &kp RETURN  &mo 4  &kp RALT
+&kp TAB           &kp Q  &kp W  &kp E     &kp R        &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P     &kp BSPC
+&mt LCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F        &kp G        &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT         &kp Z  &kp X  &kp C     &kp V        &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                                &kp LGUI  &lt 7 SPACE  &lt 8 TAB    &lt 4 RET  &lt 3 BACKSPACE  &lt 5 DEL
             >;
         };
 
@@ -155,7 +155,7 @@
 &kp TAB    &kp Q            &kp W            &kp F         &kp P              &kp B     &kp J   &kp L               &kp U                 &kp Y             &kp SEMI     &kp BSPC
 &trans     &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G     &kp M   &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT  &kp Z            &kp X            &kp C         &kp D              &kp V     &kp K   &kp H               &kp COMMA             &kp DOT           &kp FSLH     &trans
-                                             &trans        &mo 3              &trans    &trans  &mo 4               &trans
+                                             &trans        &trans             &trans    &trans  &trans              &trans
             >;
         };
 
