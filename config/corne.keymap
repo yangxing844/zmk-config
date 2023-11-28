@@ -161,10 +161,10 @@
 
         colemak-dh_without_hrm {
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp F   &kp P  &kp B     &kp J   &kp L  &kp U      &kp Y    &kp SEMI  &kp BSPC
-&trans   &kp A  &kp R  &kp S   &kp T  &kp G     &kp M   &kp N  &kp E      &kp I    &kp O     &kp APOS
-&trans   &kp Z  &kp X  &kp C   &kp D  &kp V     &kp K   &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                       &trans  &mo 3  &trans    &trans  &mo 4  &trans
+&kp TAB  &kp Q  &kp W  &kp F   &kp P   &kp B     &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp BSPC
+&trans   &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
+&trans   &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                       &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -179,7 +179,7 @@
 &none      &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp KP_NUMBER_9  &kp RIGHT_BRACKET    &none    &none       &none      &none          &none     &kp BSPC
 &none      &kp KP_DIVIDE     &kp NUMBER_4  &kp N5        &kp N6           &kp PLUS             &none    &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RGUI  &none
 &kp LSHFT  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp MINUS            &none    &none       &none      &none          &none     &none
-                                           &kp PERIOD    &kp N0           &kp BSLH             &kp RET  &mo 5       &none
+                                           &kp PERIOD    &kp N0           &kp BSLH             &kp RET  &none       &mo 9
             >;
         };
 
@@ -232,6 +232,17 @@
 &none  &none     &none     &none      &none      &none    &none       &none        &none       &none      &none       &none
                            &none      &none      &none    &none       &none        &none
             >;
+        };
+
+        switch {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &to 0   &to 1   &to 2   &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "switch";
         };
     };
 };
