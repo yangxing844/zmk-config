@@ -6,7 +6,10 @@
 
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     combos {
@@ -143,10 +146,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R        &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P     &kp BSPC
-&mt LCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F        &kp G        &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V        &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                &kp LGUI  &lt 7 SPACE  &lt 8 TAB    &lt 4 RET  &lt 3 BACKSPACE  &lt 5 DEL
+&kp TAB           &kp Q  &kp W  &kp E            &kp R        &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P     &kp BSPC
+&mt LCTRL ESCAPE  &kp A  &kp S  &kp D            &kp F        &kp G        &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT         &kp Z  &kp X  &kp C            &kp V        &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                                &lt 10 LEFT_GUI  &lt 7 SPACE  &lt 8 TAB    &lt 4 RET  &lt 3 BACKSPACE  &lt 5 DEL
             >;
         };
 
@@ -243,6 +246,15 @@
             >;
 
             label = "switch";
+        };
+
+        media {
+            bindings = <
+&trans  &trans    &trans    &trans     &trans     &trans    &trans             &trans          &trans        &trans           &trans        &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &ext_power EP_TOG  &kp C_PREVIOUS  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_NEXT    &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &out OUT_TOG       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4
+                            &trans     &trans     &trans    &kp C_PAUSE        &kp C_STOP      &kp K_MUTE
+            >;
         };
     };
 };
