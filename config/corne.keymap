@@ -215,7 +215,7 @@
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y   &trans  &trans  &trans  &trans  &trans
 &kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &trans  &trans  &trans  &trans  &trans  &trans
 &kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                         &kp LALT  &mo 3  &kp SPACE    &trans  &trans  &trans
+                         &kp LALT  &mo 3  &kp SPACE    &trans  &mo 3   &trans
             >;
         };
 
@@ -230,17 +230,17 @@
 
         mouse {
             bindings = <
-&none  &none     &none     &none      &none      &none    &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none       &mmv MOVE_LEFT &mmv MOVE_DOWN       &mmv MOVE_UP      &mmv MOVE_RIGHT       &none
-&none  &none     &none     &none      &none      &none    &none       &mwh SCROLL_LEFT        &mwh SCROLL_UP       &mwh SCROLL_DOWN      &mwh SCROLL_RIGHT       &none
-                           &none      &none      &none    &mkp RCLK       &mkp LCLK        &mkp MCLK
+&none  &none     &none     &none      &none      &none    &kp K_REDO  &kp K_PASTE       &kp K_COPY      &kp K_CUT         &kp K_UNDO         &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none       &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_UP      &mmv MOVE_RIGHT    &none
+&none  &none     &none     &none      &none      &none    &none       &mwh SCROLL_LEFT  &mwh SCROLL_UP  &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT  &none
+                           &none      &none      &none    &mkp RCLK   &mkp LCLK         &mkp MCLK
             >;
         };
 
         switch {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &to 6   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &to 0   &to 1   &to 2   &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
