@@ -1,4 +1,4 @@
-/* Greek letters */
+
 ZMK_UNICODE_PAIR(el_alpha,     N0, N3,  B, N1,    N0, N3, N9, N1)
 ZMK_UNICODE_PAIR(el_beta,      N0, N3,  B, N2,    N0, N3, N9, N2)
 ZMK_UNICODE_PAIR(el_gamma,     N0, N3,  B, N3,    N0, N3, N9, N3)
@@ -23,4 +23,3 @@ ZMK_UNICODE_PAIR(el_phi,       N0, N3,  C, N6,    N0, N3,  A, N6)  // varphi = 0
 ZMK_UNICODE_PAIR(el_chi,       N0, N3,  C, N7,    N0, N3,  A, N7)
 ZMK_UNICODE_PAIR(el_psi,       N0, N3,  C, N8,    N0, N3,  A, N8)
 ZMK_UNICODE_PAIR(el_omega,     N0, N3,  C, N9,    N0, N3,  A, N9)
-
