@@ -49,54 +49,10 @@
             key-positions = <8 9>;
         };
 
-        window {
-            bindings = <&kp LG(NUMBER_1)>;
-            key-positions = <1 36>;
-        };
-
-        m2 {
-            bindings = <&kp LG(NUMBER_2)>;
-            key-positions = <36 2>;
-        };
-
-        m3 {
-            bindings = <&kp LG(NUMBER_3)>;
-            key-positions = <36 3>;
-        };
-
-        m4 {
-            bindings = <&kp LG(NUMBER_4)>;
-            key-positions = <36 4>;
-        };
-
-        m5 {
-            bindings = <&kp LG(N5)>;
-            key-positions = <36 5>;
-        };
-
-        m6 {
-            bindings = <&kp LG(NUMBER_6)>;
-            key-positions = <36 13>;
-        };
-
-        m7 {
-            bindings = <&kp LG(N7)>;
-            key-positions = <36 14>;
-        };
-
-        m8 {
-            bindings = <&kp LG(N8)>;
-            key-positions = <36 15>;
-        };
-
-        m9 {
-            bindings = <&kp LG(N9)>;
-            key-positions = <36 16>;
-        };
-
-        m0 {
-            bindings = <&kp LG(NUMBER_1)>;
-            key-positions = <36 17>;
+        game-1 {
+            bindings = <&kp N1>;
+            key-positions = <1 2>;
+            layers = <6>;
         };
     };
 
@@ -186,7 +142,7 @@
 &none      &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp RIGHT_BRACKET    &none    &none       &none      &none          &none     &kp BSPC
 &none      &kp KP_DIVIDE     &kp NUMBER_4  &kp N5        &kp N6        &kp EQUAL            &none    &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RGUI  &none
 &kp LSHFT  &kp N0            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS            &none    &none       &none      &none          &none     &none
-                                           &kp PERIOD    &none         &kp BSLH             &kp RET  &none       &mo 9
+                                           &kp PERIOD    &kp COMMA     &kp BSLH             &kp RET  &trans      &trans
             >;
         };
 
@@ -216,10 +172,10 @@
 
         game {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                         &kp LALT  &mo 3  &kp SPACE    &trans  &mo 3   &trans
+&kp TAB    &kp Q  &kp W  &kp E     &kp R      &kp T        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F      &kp G        &trans  &trans  &trans  &trans  &trans  &trans
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V      &kp B        &trans  &trans  &trans  &trans  &trans  &trans
+                         &kp LALT  &kp SPACE  &kp SPACE    &trans  &mo 3   &trans
             >;
         };
 
@@ -259,6 +215,15 @@
 &trans  &trans    &trans    &trans     &trans     &trans    &out OUT_TOG       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4
                             &trans     &trans     &trans    &kp C_PAUSE        &kp C_STOP      &kp K_MUTE
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        switch {
+            if-layers = <4 5>;
+            then-layer = <9>;
         };
     };
 };
