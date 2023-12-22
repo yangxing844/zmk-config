@@ -157,7 +157,7 @@
 &none  &kp LEFT_BRACE  &kp AMPERSAND    &kp KP_MULTIPLY       &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE    &none  &none       &none      &none          &none     &kp BSPC
 &none  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS           &none  &kp RSHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RGUI  &none
 &none  &kp TILDE       &kp EXCLAMATION  &kp AT                &kp HASH               &kp UNDER          &none  &none       &none      &none          &none     &none
-                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE           &none  &none       &none
+                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE           &none  &trans      &trans
             >;
         };
 
@@ -166,7 +166,7 @@
 &none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN    &none  &none      &none      &none     &none     &none
 &none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
 &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &none  &none      &none      &none     &none     &none
-                        &mo 10  &none   &none              &none  &none      &none
+                        &mo 10  &none   &none              &none  &trans     &none
             >;
         };
 
