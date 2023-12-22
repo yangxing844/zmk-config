@@ -222,7 +222,7 @@
         compatible = "zmk,conditional-layers";
 
         switch {
-            if-layers = <4 5>;
+            if-layers = <5 3>;
             then-layer = <9>;
         };
     };
