@@ -205,7 +205,7 @@
 
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp BSPC
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp DELETE
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &trans
                                                     &kp LCMD      &kp SPACE          &lt 5 TAB    &lt 3 ENTER  &lt 2 BACKSPACE     &kp LEFT_ALT
