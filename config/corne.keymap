@@ -176,7 +176,7 @@
             bindings = <
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B               &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G               &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V               &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &trans
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V               &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
                                                     &kp LCMD      &kp SPACE          &lt 5 LEFT_SHIFT    &lt 3 ENTER  &lt 2 BACKSPACE     &kp DELETE
             >;
         };
@@ -185,7 +185,7 @@
             bindings = <
 &kp TAB  &kp Q  &kp W  &kp F   &kp P   &kp B     &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp BSPC
 &trans   &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
-&trans   &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&trans   &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
@@ -249,6 +249,15 @@
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &ext_power EP_TOG  &kp C_PREVIOUS  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_NEXT    &trans
 &trans  &trans    &trans    &trans     &trans     &trans    &out OUT_TOG       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4
                             &trans     &trans     &trans    &kp C_PAUSE        &kp C_STOP      &kp K_MUTE
+            >;
+        };
+
+        greek {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
