@@ -256,7 +256,7 @@
             bindings = <
 &trans  &el_theta   &el_omega     &el_phi       &el_pi        &el_beta       &trans   &el_lambda    &el_upsilon   &el_psi       &de_eszett &trans
 &trans   &el_alpha     &el_rho       &el_sigma     &el_tau       &el_gamma    &el_mu        &el_nu        &el_epsilon   &el_iota      &el_omikron  &trans  
-&trans   &el_zeta      &el_xi        &el_chi       &el_delta     &el_theta     &el_kappa     &el_eta       &de_ae        &de_oe        &de_ue   &trans
+&trans   &el_zeta      &el_xi        &el_chi       &el_delta     &el_theta     &el_kappa     &el_eta       &trans        &trans        &trans   &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
