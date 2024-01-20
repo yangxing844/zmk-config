@@ -3,7 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
+
 #include "helper.h"
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
@@ -177,7 +179,7 @@
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B               &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G               &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V               &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
-                                                    &kp LCMD      &kp SPACE          &lt 5 LEFT_SHIFT    &lt 3 ENTER  &lt 2 BACKSPACE     &kp DELETE
+                                                    &kp LCMD      &kp SPACE          &lt 5 LEFT_SHIFT    &lt 4 ENTER  &lt 3 BACKSPACE     &kp DELETE
             >;
         };
 
@@ -187,6 +189,15 @@
 &trans   &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
 &trans   &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        game {
+            bindings = <
+&kp TAB           &kp Q  &kp W  &kp E     &kp R   &kp T        &key_repeat  &trans  &trans  &trans  &trans  &trans
+&mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G        &mkp LCLK    &trans  &trans  &trans  &trans  &trans
+&kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B        &trans       &trans  &trans  &trans  &trans  &trans
+                                &kp LALT  &kp N1  &kp SPACE    &trans       &trans  &trans
             >;
         };
 
@@ -214,15 +225,6 @@
             >;
         };
 
-        game {
-            bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R   &kp T        &key_repeat  &trans  &trans  &trans  &trans  &trans
-&mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G        &mkp LCLK    &trans  &trans  &trans  &trans  &trans
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B        &trans       &trans  &trans  &trans  &trans  &trans
-                                &kp LALT  &kp N1  &kp SPACE    &trans       &mo 6   &trans
-            >;
-        };
-
         mouse {
             bindings = <
 &none  &none     &kp C_VOL_DN  &kp C_VOLUME_UP  &none      &none    &kp K_REDO        &kp K_PASTE       &kp K_COPY      &kp K_CUT          &kp K_UNDO  &none
@@ -235,7 +237,7 @@
         switch {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 4         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 2         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &to 0         &to 0         &to 1         &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans  &trans  &trans
             >;
@@ -254,10 +256,10 @@
 
         greek {
             bindings = <
-&trans  &el_theta   &el_omega     &el_phi       &el_pi        &el_beta       &trans   &el_lambda    &el_upsilon   &el_psi       &trans  &trans
-&trans   &el_alpha     &el_rho       &el_sigma     &el_tau       &el_gamma    &el_mu        &el_nu        &el_epsilon   &el_iota      &el_omikron  &trans  
-&trans   &el_zeta      &el_xi        &el_chi       &el_delta     &el_theta     &el_kappa     &el_eta       &trans        &trans        &trans   &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta     &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
+&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma    &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
+&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta    &el_kappa  &el_eta     &trans       &trans    &trans       &trans
+                              &trans     &trans     &trans       &trans     &trans      &trans
             >;
         };
     };
@@ -266,7 +268,7 @@
         compatible = "zmk,conditional-layers";
 
         switch {
-            if-layers = <3 2>;
+            if-layers = <4 3>;
             then-layer = <6>;
         };
     };
