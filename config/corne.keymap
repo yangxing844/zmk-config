@@ -8,8 +8,8 @@
 
 #include "helper.h"
 #include <dt-bindings/zmk/mouse.h>
-#include <behaviors.dtsi>
 #include "greek.dtsi"
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -212,7 +212,7 @@
 &none      &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp RIGHT_BRACKET    &none     &none     &none         &none      &none  &kp BSPC
 &none      &kp SLASH         &kp NUMBER_4  &kp N5        &kp N6        &kp KP_MULTIPLY      &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &none
 &kp LSHFT  &kp MINUS         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS             &none     &none     &trans        &trans     &none  &none
-                                           &trans        &kp N0        &kp NUMBER_0         &kp RET   &trans    &trans
+                                           &kp DOT       &kp N0        &kp NUMBER_0         &kp RET   &trans    &trans
             >;
         };
 
@@ -236,10 +236,10 @@
 
         switch {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 2         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &to 0         &to 0         &to 1         &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans        &trans        &trans          &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bootloader  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 2         &trans        &trans          &trans       &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &to 0         &to 0         &to 1         &trans          &trans       &trans  &trans  &trans  &trans  &trans
+                                        &trans        &trans        &trans          &trans       &trans  &trans
             >;
 
             label = "switch";
