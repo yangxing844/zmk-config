@@ -107,7 +107,7 @@
         };
 
         dollar {
-            bindings = <&kp DOLLAR>;
+            bindings = <&kp TILDE>;
             key-positions = <4 5>;
         };
 
@@ -122,7 +122,7 @@
         };
 
         tilde {
-            bindings = <&kp TILDE>;
+            bindings = <&kp DOLLAR>;
             key-positions = <15 16>;
         };
 
@@ -194,10 +194,10 @@
 
         game {
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R   &kp T        &key_repeat  &trans  &trans  &trans  &trans  &trans
-&mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G        &mkp LCLK    &trans  &trans  &trans  &trans  &trans
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B        &trans       &trans  &trans  &trans  &trans  &trans
-                                &kp LALT  &kp N1  &kp SPACE    &trans       &trans  &trans
+&kp TAB           &kp Q  &kp W  &kp E     &kp R   &kp T        &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G        &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B        &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                                &kp LALT  &kp N1  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
