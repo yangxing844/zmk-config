@@ -3,6 +3,17 @@
 #include <dt-bindings/zmk/keys.h>
 #include "helper.h"
 #include "greek.dtsi"
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
+#include <dt-bindings/zmk/mouse.h>
+
+&mmv {
+  acceleration-exponent = <1>;      // 1
+  time-to-max-speed-ms = <500>;    // 40
+  delay-ms = <0>;                   // 0
+};
+
 / {
     combos {
         compatible = "zmk,combos";
