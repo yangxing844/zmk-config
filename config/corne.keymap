@@ -1,11 +1,8 @@
-#include "helper.h"
-#include "greek.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-
-#define U_MOUSE_MOVE_MAX 1400
-
+#include "helper.h"
+#include "greek.dtsi"
 / {
     combos {
         compatible = "zmk,combos";
