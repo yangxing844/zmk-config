@@ -1,3 +1,4 @@
+#include <behaviors.dtsi>
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -165,33 +166,6 @@
     UC_MACRO(name ## _upper, &kp U0 &kp U1 &kp U2 &kp U3) \
     UC_MODMORPH(name, &name ## _lower, &name ## _upper)
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
-
-#include <dt-bindings/zmk/mouse.h>
-
-&mmv {
-  acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <500>;    // 40
-  delay-ms = <0>;                   // 0
-};
-
-&msc {
-  acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <40>;      // 500
-  delay-ms = <0>;                   // 10
-};
-
-#define U_MS_U &mmv MOVE_UP
-#define U_MS_D &mmv MOVE_DOWN
-#define U_MS_L &mmv MOVE_LEFT
-#define U_MS_R &mmv MOVE_RIGHT
-#define U_WH_U &msc SCRL_UP
-#define U_WH_D &msc SCRL_DOWN
-#define U_WH_L &msc SCRL_LEFT
-#define U_WH_R &msc SCRL_RIGHT
-
-
 ZMK_UNICODE_PAIR(el_alpha,     N0, N3,  B, N1,    N0, N3, N9, N1)
 ZMK_UNICODE_PAIR(el_beta,      N0, N3,  B, N2,    N0, N3, N9, N2)
 ZMK_UNICODE_PAIR(el_gamma,     N0, N3,  B, N3,    N0, N3, N9, N3)
@@ -216,7 +190,7 @@ ZMK_UNICODE_PAIR(el_phi,       N0, N3,  C, N6,    N0, N3,  A, N6)  // varphi = 0
 ZMK_UNICODE_PAIR(el_chi,       N0, N3,  C, N7,    N0, N3,  A, N7)
 ZMK_UNICODE_PAIR(el_psi,       N0, N3,  C, N8,    N0, N3,  A, N8)
 ZMK_UNICODE_PAIR(el_omega,     N0, N3,  C, N9,    N0, N3,  A, N9)
-#include <behaviors.dtsi>
+
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -435,9 +409,9 @@ ZMK_UNICODE_PAIR(el_omega,     N0, N3,  C, N9,    N0, N3,  A, N9)
         mouse {
             bindings = <
 &none  &none     &kp C_VOL_DN  &kp C_VOLUME_UP  &none      &none    &kp K_REDO        &kp K_PASTE       &kp K_COPY      &kp K_CUT          &kp K_UNDO  &none
-&none  &kp LGUI  &kp LALT      &kp LCTRL        &kp LSHFT  &none    &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &none       &none
-&none  &none     &none         &none            &none      &none    &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &none       &none
-                               &none            &none      &none    &mkp RCLK         &mkp LCLK         &mkp MCLK
+&none  &kp LGUI  &kp LALT      &kp LCTRL        &kp LSHFT  &none    &none   &none      &none    &none       &none
+&none  &none     &none         &none            &none      &none    &none   &none      &none    &none  &none       &none
+                               &none            &none      &none   &none   &none      &none    
             >;
         };
 
