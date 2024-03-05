@@ -173,8 +173,6 @@
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
                                                     &kp LCMD      &lt 4 DELETE       &kp SPACE    &lt 5 ENTER  
             >;
-
-         trackball-bindings = <&tmv_coarse>;
         };
 
         colemak-dh_without_hrm {
@@ -184,7 +182,6 @@
 &trans   &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
                        &trans  &trans  &trans    &trans  &trans  
             >; 
-trackball-bindings = <&tmv_coarse>;
         };
 
         qwerty {
@@ -194,7 +191,6 @@ trackball-bindings = <&tmv_coarse>;
 &trans   &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &trans    &trans
                        &trans  &trans  &trans    &trans  &trans  
             >;
- trackball-bindings = <&tmv_coarse>;
         };
 
         game {
@@ -203,7 +199,7 @@ trackball-bindings = <&tmv_coarse>;
 &mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G        &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
 &kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B        &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
                                 &kp LALT  &kp N1  &kp SPACE    &trans  &trans 
-            >; trackball-bindings = <&tmv_coarse>;
+            >; 
         };
 
         number {
@@ -212,7 +208,7 @@ trackball-bindings = <&tmv_coarse>;
 &trans  &none  &none  &none  &none  &none     &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
 &none   &none  &none  &none  &none  &none     &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
                       &none  &none  &trans    &kp RET    &trans 
-            >; trackball-bindings = <&tmv_fine>;
+            >; 
         };
 
         fun {
@@ -221,7 +217,7 @@ trackball-bindings = <&tmv_coarse>;
 &none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
 &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &none  &none      &none      &none     &none     &none
                         &none   &none   &none              &none  &trans   
-            >;   trackball-bindings = <&tsl_fine>;
+            >;
         };
 
         Mouse {
@@ -230,7 +226,7 @@ trackball-bindings = <&tmv_coarse>;
 &none  &none  &none         &none            &none     &none        &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
 &none  &none  &none         &none            &none     &none        &none           &none        &none         &none      &none       &none
                             &mkp MB4         &mkp MB5  &mkp LCLK    &mkp RCLK     
-            >;trackball-bindings = <&tmv_fine>;
+            >;
         };
 
         switch {
@@ -240,7 +236,6 @@ trackball-bindings = <&tmv_coarse>;
 &trans      &trans        &to 0         &to 1         &to 2         &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans  &trans 
             >;
-
             label = "switch";
         };
 
