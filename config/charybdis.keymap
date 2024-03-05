@@ -165,10 +165,17 @@
 
         colemak-dh {
             bindings = <
+<<<<<<< HEAD
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
+                                                    &kp LCMD      &lt 4 DELETE       &kp SPACE    &lt 5 ENTER  &lt 6 DELETE
+=======
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B  &kp J  &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G  &kp M  &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V  &kp K  &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
                   &kp LCMD         &lt 4 DELETE     &kp SPACE     &lt 5 ENTER
+>>>>>>> 88f24e4f329887f462fb64a0260c7e1a247b7357
             >;
         };
 
@@ -219,10 +226,17 @@
 
         Mouse {
             bindings = <
+<<<<<<< HEAD
+&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none        &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
+&none  &none  &none         &none            &none     &none        &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
+&none  &none  &none         &none            &none     &none        &none           &none        &none         &none      &none       &none
+                            &mkp MB4         &mkp MB5  &mkp LCLK    &mkp RCLK     &mkp LCLK
+=======
 &none  &none     &kp C_VOL_DN  &kp C_VOLUME_UP  &none      &none  &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
 &none  &to 9     &to 10        &none            &none      &none  &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
 &none  &none     &none         &none            &none      &none  &none           &none        &none         &none      &none       &none
        &mkp MB4  &mkp MB5      &mkp LCLK        &mkp RCLK
+>>>>>>> 88f24e4f329887f462fb64a0260c7e1a247b7357
             >;
         };
 
@@ -239,10 +253,10 @@
 
         greek {
             bindings = <
-&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta   &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
-&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma  &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
-&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta  &el_kappa  &el_eta     &trans       &trans    &trans       &trans
-        &trans     &trans     &trans     &trans     &trans
+&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta     &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
+&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma    &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
+&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta    &el_kappa  &el_eta     &trans       &trans    &trans       &trans
+                              &trans     &trans     &trans       &trans     &trans     
             >;
         };
 
