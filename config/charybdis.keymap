@@ -220,7 +220,7 @@
         Mouse {
             bindings = <
 &none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none        &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
-&none  &to 9  &to 10        &none            &none     &none        &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
+&none  &mo 9  &mo 10        &none            &none     &none        &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
 &none  &none  &none         &none            &none     &none        &none           &none        &none         &none      &none       &none
                             &mkp MB4         &mkp MB5  &mkp LCLK    &mkp RCLK       &mkp LCLK
             >;
