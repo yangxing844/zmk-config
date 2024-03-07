@@ -177,7 +177,7 @@
 &trans  &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
 &mo 3   &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
 &mo 2   &none   &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &mkp MCLK
-                        &mkp MB4  &mkp MB5  &mkp LCLK    &mkp RCLK  &mkp LCLK
+                        &mkp MB4  &mkp LCLK  &mkp MB5    &mkp RCLK  &mkp LCLK
             >;
         };
 
