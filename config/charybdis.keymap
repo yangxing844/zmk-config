@@ -1,11 +1,11 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
-
+#include "helper.h"
+#include "greek.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "helper.h"
-#include "greek.dtsi"
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -168,7 +168,16 @@
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B           &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 8
-                                                    &kp LCMD      &kp SPACE          &lt 4 DELETE    &lt 5 ENTER  &mt BACKSPACE DELETE
+                                                    &kp LCMD      &kp SPACE          &lt 5 DELETE    &lt 6 ENTER  &mt BACKSPACE DELETE
+            >;
+        };
+
+        Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
+&mo 10  &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
+&mo 9   &none   &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &mkp MCLK
+                        &mkp MB4  &mkp MB5  &mkp LCLK    &mkp RCLK  &mkp LCLK
             >;
         };
 
@@ -217,20 +226,11 @@
             >;
         };
 
-        Mouse {
-            bindings = <
-&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none        &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
-&none  &mo 9  &mo 10        &none            &none     &none        &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
-&none  &none  &none         &none            &none     &none        &none           &none        &none         &none      &none       &none
-                            &mkp MB4         &mkp MB5  &mkp LCLK    &mkp RCLK       &mkp LCLK
-            >;
-        };
-
         switch {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 3         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &to 0         &to 1         &to 2         &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 4         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &to 0         &to 2         &to 3         &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans  &trans
             >;
 
@@ -273,7 +273,7 @@
         compatible = "zmk,conditional-layers";
 
         switch {
-            if-layers = <5 4>;
+            if-layers = <6 5>;
             then-layer = <7>;
         };
     };
