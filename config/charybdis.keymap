@@ -168,7 +168,7 @@
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B           &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 10
-                                                    &kp LCMD      &kp SPACE          &lt 7 DELETE    &lt 8 ENTER  &mt BACKSPACE DELETE
+                                                    &kp LCMD      &kp SPACE          &lt 7 DELETE    &lt 8 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
