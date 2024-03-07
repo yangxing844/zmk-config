@@ -167,18 +167,40 @@
             bindings = <
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B           &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 8
-                                                    &kp LCMD      &kp SPACE          &lt 5 DELETE    &lt 6 ENTER  &mt BACKSPACE DELETE
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 10
+                                                    &kp LCMD      &kp SPACE          &lt 7 DELETE    &lt 8 ENTER  &mt BACKSPACE DELETE
             >;
         };
 
         Mouse {
             bindings = <
 &trans  &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
-&mo 10  &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
-&mo 9   &none   &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &mkp MCLK
+&mo 3   &trans  &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &trans
+&mo 2   &none   &trans  &trans    &trans    &trans       &trans     &trans     &trans  &trans  &trans  &mkp MCLK
                         &mkp MB4  &mkp MB5  &mkp LCLK    &mkp RCLK  &mkp LCLK
             >;
+        };
+
+        snipe {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+
+            label = "snipe";
+        };
+
+        scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+
+            label = "scroll";
         };
 
         colemak-dh_without_hrm {
@@ -229,8 +251,8 @@
         switch {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 4         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &to 0         &to 2         &to 3         &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 6         &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &to 0         &to 4         &to 5         &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans  &trans
             >;
 
@@ -245,36 +267,14 @@
                               &trans     &trans     &trans       &trans     &trans
             >;
         };
-
-        snipe {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-
-            label = "snipe";
-        };
-
-        scroll {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-
-            label = "scroll";
-        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         switch {
-            if-layers = <6 5>;
-            then-layer = <7>;
+            if-layers = <8 7>;
+            then-layer = <9>;
         };
     };
 };
