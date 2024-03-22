@@ -1,11 +1,10 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 #include "helper.h"
 #include "greek.dtsi"
-
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -166,14 +165,10 @@
             key-positions = <20 21>;
             layers = <1>;
         };
-    };
 
-    macros {
-        love: love {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp X &kp I &kp A &kp O &kp SPACE &kp Y &kp A &kp N &kp G &kp COMMA &kp SPACE &kp LS(I) &kp SPACE &kp L &kp O &kp V &kp E &kp SPACE &kp Y &kp O &kp U &kp COMMA &kp SPACE &kp F &kp O &kp R &kp SPACE &kp E &kp V &kp E &kp R &kp Y &kp SPACE &kp T &kp H &kp I &kp N &kp G &kp SPACE &kp W &kp E &kp SPACE &kp H &kp A &kp V &kp E &kp SPACE &kp B &kp E &kp E &kp N &kp SPACE &kp T &kp H &kp R &kp O &kp U &kp G &kp H &kp COMMA &kp SPACE &kp LS(I) &kp SPACE &kp A &kp M &kp SPACE &kp R &kp O &kp O &kp T &kp I &kp N &kp G &kp SPACE &kp F &kp O &kp R &kp SPACE &kp Y &kp O &kp U>;
-            label = "LOVE";
+        switch {
+            bindings = <&mo 9>;
+            key-positions = <39 40>;
         };
     };
 
