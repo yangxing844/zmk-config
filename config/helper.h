@@ -6,7 +6,7 @@
  */
 
 #pragma once
-
+#include <behaviors.dtsi>
 #define ZMK_HELPER_STRINGIFY(x) #x
 
 /* ZMK_BEHAVIOR */
