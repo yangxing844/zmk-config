@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/petejohanson
     - name: yangxing844
-      url-base: https://github.com/yangxing
+      url-base: https://github.com/yangxing844
   projects:
     - name: zmk
       remote: zmkfirmware
