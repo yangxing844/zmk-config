@@ -225,10 +225,10 @@
 
         snipe {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans       &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans       &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans       &trans    &trans    &trans  &trans  &trans  &trans
-                        &mkp RCLK  &mkp LCLK  &mkp MCLK    &mkp MB4  &mkp MB5
+&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                        &mkp RCLK  &mkp LCLK  &mkp MCLK    &trans  &trans
             >;
 
             label = "snipe";
