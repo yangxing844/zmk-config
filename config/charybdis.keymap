@@ -274,10 +274,10 @@
 
         number {
             bindings = <
-&trans  &none  &kp N7  &kp N8  &kp N9  &none     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
-&trans  &none  &kp N4  &kp N5  &kp N6  &none     &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
-&none   &none  &kp N1  &kp N2  &kp N3  &none     &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
-                       &none   &none   &trans    &mo 9      &trans
+&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &kp PLUS  &kp N7    &kp N8        &kp N9    &kp KP_MULTIPLY  &kp BSPC
+&trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp DOWN  &kp FSLH         &trans
+&none   &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT      &kp DOT   &kp N1    &kp N2        &kp N3    &kp N0           &trans
+                                 &none   &none   &trans       &mo 9     &trans
             >;
         };
 
