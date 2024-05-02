@@ -207,18 +207,18 @@
 
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B           &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
-&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 10
-                                                    &kp LCMD      &kp SPACE          &lt 7 DELETE    &lt 8 ENTER  &mt DELETE BACKSPACE
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 10
+                                                    &kp LCMD      &mo 7              &kp SPACE    &lt 8 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
         Mouse {
             bindings = <
-&trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mo 3
-&trans  &mkp MB3  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &mo 3   &mo 2
+&trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans     &trans  &trans
+&trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans     &trans  &trans
+&trans  &mkp MB3  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp MB3  &mkp RCLK  &mo 3   &trans
                           &trans  &trans  &trans    &trans  &trans
             >;
         };
@@ -265,18 +265,18 @@
 
         war_thuner {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E    &kp R      &kp T    &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
-&kp LCTRL  &kp A  &kp S  &kp D    &kp F      &kp G    &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
-&kp LSHFT  &kp Z  &kp X  &kp C    &kp V      &kp B    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                         &kp DOT  &kp SPACE  &mo 7    &trans  &trans
+&kp TAB    &kp Q  &kp W  &kp E    &kp R  &kp T        &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&kp LCTRL  &kp A  &kp S  &kp D    &kp F  &kp G        &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&kp LSHFT  &kp Z  &kp X  &kp C    &kp V  &kp B        &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &kp DOT  &mo 7  &kp SPACE    &trans  &trans
             >;
         };
 
         number {
             bindings = <
-&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &kp PLUS  &kp N7    &kp N8        &kp N9    &kp KP_MULTIPLY  &kp BSPC
-&trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp DOWN  &kp FSLH         &trans
-&none   &kp N0           &kp N1  &kp N2  &kp N3  &kp DOT      &kp DOT   &kp N1    &kp N2        &kp N3    &kp N0           &trans
+&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &none     &none     &none         &none      &none  &none
+&trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &trans
+&none   &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0       &none     &none     &none         &none      &none  &trans
                                  &none   &none   &trans       &mo 9     &trans
             >;
         };
