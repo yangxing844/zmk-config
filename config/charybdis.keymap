@@ -161,7 +161,7 @@
         };
 
         lclk {
-            bindings = <&mkp LCLK>;
+            bindings = <&kp ENTER>;
             key-positions = <15 16>;
             layers = <1>;
         };
