@@ -3,8 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/petejohanson
     - name: badjeff
-      url-base: https://github.com/badjeff/zmk-pmw3610-driver
-  projects:
+      url-base: https://github.com/badjeff/
     - name: zmk
       remote: zmkfirmware
       revision: feat/pointers-move-scroll
