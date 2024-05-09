@@ -6,6 +6,95 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
+
+/ {
+	/* assign `input-listener` to all pointing devices */
+	/* &pd0 on central, &pd1 on peripheral */
+
+        trackball_central_listener {
+                compatible = "zmk,input-listener";
+                device = <&pd1>;
+	};
+
+        trackball_peripheral_listener {
+                compatible = "zmk,input-listener";
+                device = <&trackball>;
+	};
+};
+/ {
+        /* input config for mouse move mode on default layer (DEF & MSK) */
+        tb0_mmv_ibl {
+                /* new forked compatible name */
+                compatible = "zmk,input-behavior-listener";
+                
+                /* the input point device alias */
+                device = <&pd1>;
+
+                /* only enable in default layer (DEF) & mouse key layer (MSK) */
+                layers = <0,1,5>;
+
+                /* event code value to override raw input event */
+                /* designed for switching to mouse scroll, xy-swap, precise-mode+, etc */
+                /* NOTE: only apply input-code overriding for INPUT_EV_REL */
+                evt-type = <INPUT_EV_REL>;
+                x-input-code = <INPUT_REL_X>;
+                y-input-code = <INPUT_REL_Y>;
+                scale-multiplier = <1>;
+                scale-divisor = <1>;
+
+                /* bind a behavior to auto activate MSK layer for &mkp */
+                bindings = <&ib_tog_layer 5>;
+
+                /* align to CCW 45 degree */
+                // rotate-deg = <315>;
+                /* NOTE 1: This settings do not compitable with y-invert and x-invert */
+                /* NOTE 2: Floating point computation requires alot of ram. */
+                /*         This feature will cuase stackove flow with CONFIG_ZMK_USB_LOGGING=y */
+        };
+  
+        /* input config for mouse scroll mode on momentary mouse scoll layer (MSC) */
+        tb0_msl_ibl {
+                compatible = "zmk,input-behavior-listener";
+                device = <&pd1>;
+                layers = <MSC>;
+                evt-type = <INPUT_EV_REL>;
+                
+                /* slienting x-axis with alt event code */
+                x-input-code = <INPUT_REL_MISC>;
+                y-input-code = <INPUT_REL_WHEEL>;
+
+                /* invent scrolling direction */
+                y-invert;
+
+                /* align to CCW 45 degree */
+               // rotate-deg = <315>;
+                /* NOTE 1: This settings do not compitable with y-invert and x-invert */
+                /* NOTE 2: Floating point computation requires alot of ram. */
+                /*         This feature will cuase stackove flow with CONFIG_ZMK_USB_LOGGING=y */
+
+                /* bind a behavior to down scaling input value to (1/8) */
+                /* NOTE: This behavior is different to scale-divisor. */
+                /*       The delta value is accumlated until result >= 1 after cast. */
+                /*       The scrolling is preented in hi-res and allow precise scrolling */
+                bindings = <&ib_wheel_scaler 1 8>;
+        };
+
+        /* adjust cooldown waiting period for mouse key layer (MSK) after activated */
+        ib_tog_layer: ib_tog_layer {
+                compatible = "zmk,input-behavior-tog-layer";
+                #binding-cells = <1>;
+                time-to-live-ms = <1000>;
+        };
+
+        /* define a resolution down scaler only for INPUT_REL_WHEEL */
+        ib_wheel_scaler: ib_wheel_scaler {
+                compatible = "zmk,input-behavior-scaler";
+                #binding-cells = <2>;
+                evt-type = <INPUT_EV_REL>;
+                input-code = <INPUT_REL_WHEEL>;
+        };
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -219,21 +308,10 @@
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans     &trans  &trans
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans     &trans  &trans
 &trans  &none   &mkp MB1  &mkp MB3  &mkp RCLK  &trans    &trans  &mkp LCLK  &mkp MB3  &mkp RCLK  &mo 3   &trans
-                          &trans    &mo 3      &trans    &trans  &trans
+                          &trans    &mo 2      &trans    &trans  &trans
             >;
         };
-
-        snipe {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mo 3
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mo 2
-                        &trans  &trans  &trans    &trans  &trans
-            >;
-
-            label = "snipe";
-        };
-
+        
         scroll {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
