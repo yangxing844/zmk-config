@@ -1,0 +1,165 @@
+#include "corne.dtsi"
+#include <dt-bindings/led/led.h>
+
+/ {
+	EXT_POWER {
+		compatible = "zmk,ext-power-generic";
+		control-gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>;
+		init-delay-ms = <50>;
+	};
+};
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                <NRF_PSEL(TWIM_SCL, 0, 4)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 26)>,
+                <NRF_PSEL(TWIM_SCL, 0, 4)>;
+            low-power-enable;
+        };
+    };
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+            low-power-enable;
+        };
+    };
+
+    spi3_default: spi3_default {
+				group1 {
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+				};
+		};
+	
+    spi3_sleep: spi3_sleep {
+				group1 {
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+						low-power-enable;
+				};
+		};
+};
+
+// oled 
+&i2c0 {
+	status = "okay";
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c0_default>;
+	pinctrl-1 = <&i2c0_sleep>;
+	pinctrl-names = "default", "sleep";
+	
+    corne_oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+
+&i2c1 {
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep"; 
+	
+
+	builtin_battery: max17048@36 {
+		compatible = "zmk,maxim-max17048";
+		status = "okay";
+		reg = <0x36>;
+	};
+
+	status = "okay";
+};
+
+&spi3 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	pinctrl-0 = <&spi3_default>;
+	pinctrl-1 = <&spi3_sleep>;
+	pinctrl-names = "default", "sleep";
+
+	led_strip: ws2812@0 {
+				compatible ="worldsemi,ws2812-spi";
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <24>; /* arbitrary; change at will */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+		};
+};
+
+&left_encoder {
+    status = "okay";
+};
+/ {
+	chosen {
+		zephyr,display = &corne_oled;
+		zmk,underglow = &led_strip;
+		zmk,kscan = &kscan0;
+		zmk,matrix-transform = &default_transform;
+		zmk,battery = &builtin_battery;
+	};
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+		wakeup-source;
+		input-gpios
+			= <&gpio1  1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //19
+			, <&gpio0  10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //18
+			, <&gpio1  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //13
+			, <&gpio1  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //12
+			, <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //5
+			, <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //4
+			, <&gpio1  12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex1
+			, <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //20
+			, <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //17
+			, <&gpio1  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //14
+			, <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //11
+			, <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //6
+			, <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //3
+			, <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex2
+			, <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //21
+			, <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //16
+			, <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //15
+			, <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //10
+			, <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //7
+			, <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //2
+			, <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex3
+			, <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 9
+			, <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 8
+			 ,<&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //1
+		;
+	};
+	leds {
+		compatible = "gpio-leds";
+		blue_led: led_0 {
+			gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+		};
+	};
+};
