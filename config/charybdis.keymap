@@ -70,7 +70,7 @@
         /*       The delta value is accumlated until result >= 1 after cast. */
         /*       The scrolling is preented in hi-res and allow precise scrolling */
 
-        bindings = <&ib_wheel_scaler 1 8>;
+        bindings = <&ib_wheel_scaler 1 24>;
     };
 
     /* adjust cooldown waiting period for mouse key layer (MSK) after activated */
