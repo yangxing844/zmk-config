@@ -1,4 +1,4 @@
-#include "corne.dtsi"
+#include "corne-v4.dtsi"
 #include <dt-bindings/led/led.h>
 
 / {

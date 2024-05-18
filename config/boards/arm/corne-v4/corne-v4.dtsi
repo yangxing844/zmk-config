@@ -7,7 +7,7 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 // #include "arduino_pro_micro_pins.dtsi"
-#include "corne-pinctrl.dtsi"
+#include "corne-v4-pinctrl.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 
