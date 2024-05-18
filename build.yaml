@@ -12,5 +12,5 @@
 #     shield: reviung41
 #
 
-board: [ "nice_nano_v2" ]
-shield: [ "corne_left", "corne_right","charybdis_left","charybdis_right","corne-v4_left" ]
+board: [ "nice_nano_v2","corne-v4_left" ]
+shield: [ "corne_left", "corne_right","charybdis_left","charybdis_right"]
