@@ -41,12 +41,13 @@ endif # ZMK_DISPLAY
 
 
 if LVGL
-
+config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+	default 8192
 config LV_Z_VDB_SIZE
     default 64
 
 config LV_DPI_DEF
-    default 148
+    default 70
 
 config LV_Z_BITS_PER_PIXEL
     default 1

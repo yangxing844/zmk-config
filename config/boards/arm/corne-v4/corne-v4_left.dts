@@ -52,6 +52,20 @@
 						low-power-enable;
 				};
 		};
+    spi4_default: spi3_default {
+				group1 {
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>;
+						psels = <NRF_PSEL(SPIM_SCK, 0, 4)>;
+				};
+		};
+	
+    spi4_sleep: spi3_sleep {
+				group1 {
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
+						psels = <NRF_PSEL(SPIM_SCK, 0, 4)>;
+						low-power-enable;
+				};
+		};
 };
 
 // oled 
@@ -116,7 +130,30 @@
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 		};
 };
+&spi4 {
+  compatible ="nordic,nrf-spim";
+  status = "okay";
+  pinctrl-0 = <&spi4_default>;
+  pinctrl-1 = <&spi4_sleep>;
+  pinctrl-names = "default", "sleep";
 
+  cs-gpios = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+	status = "okay";
+	lcd0: lcd@0 {
+		compatible = "jdi,lpm009m360a";
+		reg = <0>;
+		status = "okay";
+		spi-max-frequency = <4000000>;
+		disp_gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+		extcomin_gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
+		width = <144>;
+		height = <72>;
+        color_mode = [02];
+		reverse = <1>;
+		rotation = <1>;
+	};
+};
+}
 &left_encoder {
     status = "okay";
 };
