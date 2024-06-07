@@ -6,8 +6,6 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
-// #include "arduino_pro_micro_pins.dtsi"
-#include "corne-v4-pinctrl.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
 
@@ -25,12 +23,6 @@
 	};
 
 
-	// Node name must match original "EXT_POWER" label to preserve user settings.
-	// EXT_POWER {
-	// 	compatible = "zmk,ext-power-generic";
-	// 	control-gpios = <&gpio0 14 GPIO_ACTIVE_HIGH>;
-	// 	init-delay-ms = <50>;
-	// };
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
 		columns = <48>;
@@ -45,8 +37,8 @@
 
 	left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 9(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio1 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 9(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <30>;
         status = "disabled";
  };

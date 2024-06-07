@@ -31,32 +31,40 @@ endif # USB
 
 if ZMK_DISPLAY
 
-config I2C
-    default y
+# config I2C
+#     default y
+#
+# config SSD1306
+#     default y
 
-config SSD1306
-    default y
-
+config LPM009M360A
+	default y
 endif # ZMK_DISPLAY
 
 
 if LVGL
 config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
 	default 8192
+
+#config LV_HOR_RES_MAX
+	#default 128
+#config LV_VER_RES_MAX
+	#default 32
 config LV_Z_VDB_SIZE
-    default 64
+	default 64
 
 config LV_DPI_DEF
-    default 70
-
+	default 148
 config LV_Z_BITS_PER_PIXEL
-    default 1
-
+	default 1
 choice LV_COLOR_DEPTH
-    default LV_COLOR_DEPTH_1
+	default LV_COLOR_DEPTH_1
 endchoice
 
 endif # LVGL
+
+# config ZMK_WIDGET_WPM_STATUS
+# 	default y
 choice BOARD_CHARGER_CURRENT
     default BOARD_CHARGER_CURRENT_100MA
 endchoice
