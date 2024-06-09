@@ -1,0 +1,15 @@
+file_format: "1"
+id: sofle-plus
+name: Sofle-Plus
+type: shield
+url: https://github.com/josefadamcik/SofleKeyboard
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+siblings:
+  - sofle-plus_left
+  - sofle-plus_right

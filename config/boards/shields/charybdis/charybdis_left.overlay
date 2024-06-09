@@ -21,7 +21,7 @@
 / {
 	/* define virtual input, will be resurrected for emitting input event */
 	/* NOTE: set `device = <&pd1>` in `zmk,input-listener` */
-	pd1: virtual_input {
+	trackball: virtual_input {
 		compatible = "zmk,virtual-input";
 	};
 
@@ -34,6 +34,6 @@
 		relay-channel = <102>;
 
 		/* virtual input device on central, which used to emit input event as an agent device */
-		device = <&pd1>;
+		device = <&trackball>;
 	};
 };
