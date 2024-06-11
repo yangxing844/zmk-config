@@ -18,7 +18,7 @@
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
         zephyr,console = &cdc_acm_uart;
-        zmk,battery = &vbatt;
+        zmk,battery = &builtin_battery;
     };
 
     leds {
@@ -43,6 +43,7 @@
     };
 };
 
+
 &adc {
     status = "okay";
 };
@@ -66,6 +67,21 @@
     pinctrl-names = "default", "sleep";
 };
 
+&i2c1 {
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep"; 
+	
+
+	builtin_battery: max17048@36 {
+		compatible = "zmk,maxim-max17048";
+		status = "okay";
+		reg = <0x36>;
+	};
+
+	status = "okay";
+};
 &uart0 {
     compatible = "nordic,nrf-uarte";
     current-speed = <115200>;

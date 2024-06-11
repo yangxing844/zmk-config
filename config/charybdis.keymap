@@ -12,23 +12,10 @@
 	};
 };
 / {
-    /* input config for mouse move mode on default layer (DEF & MSK) */
-
     tb0_mmv_ibl {
-        /* new forked compatible name */
-
         compatible = "zmk,input-behavior-listener";
-
-        /* the input point device alias */
-
         device = <&trackball>;
-
-        /* only enable in default layer (DEF) & mouse key layer (MSK) */
-
         layers = <0 1 5>;
-
-        /* event code value to override raw input event */
-        /* designed for switching to mouse scroll, xy-swap, precise-mode+, etc */
         /* NOTE: only apply input-code overriding for INPUT_EV_REL */
 
         evt-type = <INPUT_EV_REL>;
@@ -83,7 +70,7 @@
     ib_tog_layer: ib_tog_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
-        time-to-live-ms = <1000>;
+        time-to-live-ms = <1500>;
     };
 
     /* define a resolution down scaler only for INPUT_REL_WHEEL */
