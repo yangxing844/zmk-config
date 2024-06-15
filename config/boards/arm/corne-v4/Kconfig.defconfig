@@ -73,7 +73,5 @@ config I2C
 	default y
 config SPI
 	default y
-config MAX17048
-	default y
 
 endif 

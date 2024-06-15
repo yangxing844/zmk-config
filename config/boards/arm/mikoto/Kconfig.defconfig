@@ -25,4 +25,9 @@ choice BOARD_MIKOTO_CHARGER_CURRENT
     default BOARD_MIKOTO_CHARGER_CURRENT_100MA
 endchoice
 
+config I2C
+		default y
+config MAX17048
+		default y
+
 endif # BOARD_MIKOTO
