@@ -280,6 +280,16 @@
             require-prior-idle-ms = <250>;
             hold-trigger-on-release;
         };
+
+        tap_preferred: tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <40>;
+            flavor = "tap-unless-interrupted";
+        };
     };
 
     keymap {
@@ -287,19 +297,19 @@
 
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B    &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
-&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G    &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V    &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
-                                                    &kp LCMD      &kp SPACE          &mo 6    &lt 7 ENTER  &mt DELETE BACKSPACE
+&kp TAB           &kp Q            &kp W            &kp F         &kp P                    &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T        &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D                    &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
+                                                    &kp LEFT_WIN  &tap_preferred 10 SPACE  &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
         Mouse {
             bindings = <
 &trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans     &trans  &trans
-&trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans     &trans  &trans
+&trans  &trans  &trans    &trans    &trans     &trans    &trans  &trans     &mo 2     &trans     &trans  &trans
 &trans  &none   &mkp MB1  &mkp MB3  &mkp RCLK  &trans    &trans  &mkp LCLK  &mkp MB3  &mkp RCLK  &mo 3   &trans
-                          &trans    &mo 2      &trans    &trans  &trans
+                          &trans    &trans     &trans    &trans  &trans
             >;
         };
 
@@ -345,9 +355,11 @@
             bindings = <
 &trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &none     &none     &none         &none      &none  &none
 &trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &trans
-&none   &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0       &none     &none     &none         &none      &none  &trans
-                                 &none   &none   &trans       &mo 9     &trans
+&none   &kp DOT          &kp N1  &kp N2  &kp N3  &kp ENTER    &none     &none     &none         &none      &none  &trans
+                                 &kp N0  &none   &trans       &mo 9     &trans
             >;
+
+            label = "num";
         };
 
         fun {
@@ -376,6 +388,15 @@
 &trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma    &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
 &trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta    &el_kappa  &el_eta     &trans       &trans    &trans       &trans
                               &trans     &trans     &trans       &trans     &trans
+            >;
+        };
+
+        reverse {
+            bindings = <
+&trans  &kp SEMI  &kp Y    &kp U      &kp L   &kp J     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp O     &kp I    &kp E      &kp N   &kp M     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp FSLH  &kp DOT  &kp COMMA  &kp H   &kp K     &trans  &trans  &trans  &trans  &trans  &trans
+                           &trans     &trans  &trans    &trans  &trans
             >;
         };
     };
