@@ -12,9 +12,9 @@
 #     shield: reviung41
 #
 
-board: [ "nice_nano_v2"]
+board: [ "nice_nano_v2","mikoto"]
 shield: [ "corne_left", "corne_right","charybdis_left","charybdis_right"]
 
-include:
-  - board: corne-v4_left
-  - board: corne-v4_right
+# include:
+#   - board: corne-v4_left
+#   - board: corne-v4_right
