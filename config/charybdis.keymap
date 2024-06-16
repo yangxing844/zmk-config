@@ -5,17 +5,20 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-/{
-	trackball_peripheral_listener {
-		compatible = "zmk,input-listener";
-		device = <&trackball>;
-	};
+
+/ {
+    trackball_peripheral_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };
+
 / {
     tb0_mmv_ibl {
         compatible = "zmk,input-behavior-listener";
         device = <&trackball>;
         layers = <0 1 5>;
+
         /* NOTE: only apply input-code overriding for INPUT_EV_REL */
 
         evt-type = <INPUT_EV_REL>;
@@ -207,8 +210,8 @@
             layers = <0>;
         };
 
-        tilde {
-            bindings = <&kp DOLLAR>;
+        retern {
+            bindings = <&kp RETURN>;
             key-positions = <15 16>;
             layers = <0>;
         };
