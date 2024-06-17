@@ -223,13 +223,13 @@
         };
 
         backspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&mt DELETE BACKSPACE>;
             key-positions = <14 15>;
             layers = <0>;
         };
 
         delete {
-            bindings = <&kp DELETE>;
+            bindings = <&mkp LCLK>;
             key-positions = <26 27>;
             layers = <0>;
         };
@@ -249,6 +249,11 @@
         switch {
             bindings = <&mo 8>;
             key-positions = <39 40>;
+        };
+
+        reverse {
+            bindings = <&sl 10>;
+            key-positions = <28 29>;
         };
     };
 
@@ -288,7 +293,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <40>;
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-preferred";
         };
     };
 
@@ -300,7 +305,7 @@
 &kp TAB           &kp Q            &kp W            &kp F         &kp P                    &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T        &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D                    &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
-                                                    &kp LEFT_WIN  &tap_preferred 10 SPACE  &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
+                                                    &kp LEFT_WIN  &tap_preferred 11 SPACE  &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
@@ -353,10 +358,10 @@
 
         number {
             bindings = <
-&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &none     &none     &none         &none      &none  &none
-&trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &none  &trans
-&none   &kp DOT          &kp N1  &kp N2  &kp N3  &kp ENTER    &none     &none     &none         &none      &none  &trans
-                                 &kp N0  &none   &trans       &mo 9     &trans
+&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS     &none   &none      &none      &none     &none     &none
+&trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS    &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&none   &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0       &none   &none      &none      &none     &none     &trans
+                                 &trans  &none   &trans       &trans  &trans
             >;
 
             label = "num";
@@ -397,6 +402,15 @@
 &trans  &kp O     &kp I    &kp E      &kp N   &kp M     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp FSLH  &kp DOT  &kp COMMA  &kp H   &kp K     &trans  &trans  &trans  &trans  &trans  &trans
                            &trans     &trans  &trans    &trans  &trans
+            >;
+        };
+
+        sym {
+            bindings = <
+&trans  &kp LEFT_BRACKET  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp COLON         &kp DOLLAR  &kp PERCENT   &kp CARET             &kp PLUS             &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TILDE         &kp EXCL    &kp AT        &kp DOLLAR            &kp PIPE             &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans        &trans                &trans               &trans  &trans
             >;
         };
     };
