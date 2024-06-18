@@ -8,7 +8,7 @@
 #pragma once
 #include <behaviors.dtsi>
 #define ZMK_HELPER_STRINGIFY(x) #x
-
+#define HOST_OS 1
 /* ZMK_BEHAVIOR */
 
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
