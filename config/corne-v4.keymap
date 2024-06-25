@@ -212,7 +212,7 @@
 &trans  &none  &none  &none  &none  &none  &kp B     &kp J    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
 &trans  &none  &none  &none  &none  &none  &kp G     &kp M    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
 &none   &none  &none  &none  &none  &none  &kp V     &kp K    &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
-                             &none  &none  &trans    &kp RET  &trans     &trans
+                             &none  &none  &trans    &kp RET  &mo 7      &trans
             >;
         };
 
@@ -227,19 +227,19 @@
 
         mouse {
             bindings = <
-&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none     &kp B        &kp J      &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
-&none  &none  &none         &none            &none     &none     &kp G        &kp M      &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
-&none  &none  &none         &none            &none     &none     &kp V        &kp K      &none           &none        &none         &none      &none       &none
-                                             &mkp MB4  &mkp MB5  &mkp LCLK    &mkp RCLK  &none
+&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none  &kp B        &kp J      &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
+&none  &none  &none         &none            &none     &none  &kp G        &kp M      &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
+&none  &none  &none         &none            &none     &none  &kp V        &kp K      &none           &none        &none         &none      &none       &none
+                                             &mkp MB4  &mo 7  &mkp LCLK    &mkp RCLK  &none
             >;
         };
 
         switch {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp B     &kp J   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 3         &trans        &trans        &kp G     &kp M   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &to 0         &to 1         &to 2         &trans        &kp V     &kp K   &trans  &trans  &trans  &trans  &trans  &trans
-                                                      &trans        &trans        &trans    &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp B          &kp J        &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 3         &trans        &trans        &kp G          &kp M        &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &to 0         &to 1         &to 2         &trans        &bootloader    &bootloader  &trans  &trans  &trans  &trans  &trans  &trans
+                                                      &trans        &trans        &trans         &trans       &trans  &trans
             >;
 
             label = "switch";
