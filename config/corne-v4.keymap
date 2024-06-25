@@ -1,15 +1,12 @@
-
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
-#include <dt-bindings/zmk/mouse.h>
+#include "helper.h"
+#include "greek.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "helper.h"
-#include "greek.dtsi"
-
-
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     combos {
@@ -170,37 +167,37 @@
 
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B  &kp B        &kp J       &kp J        &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
-&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G  &kp G        &kp M       &kp M        &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V  &kp V        &kp K       &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
-                                                    &kp LCMD      &lt 4 DELETE       &kp SPACE    &lt 5 ENTER  &lt 6 BACKSPACE     &lt 5 DELETE
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B         &kp B             &kp J            &kp J            &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G         &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp M            &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V         &kp V             &kp K            &kp K            &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
+                                                                  &kp LCMD           &lt 4 DELETE  &kp SPACE         &lt 5 ENTER      &lt 6 BACKSPACE  &lt 5 DELETE
             >;
         };
 
         colemak-dh_without_hrm {
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp F   &kp P   &kp B &kp B        &kp J     &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp BSPC
-&trans   &kp A  &kp R  &kp S   &kp T   &kp G &kp G        &kp M     &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
-&trans   &kp Z  &kp X  &kp C   &kp D   &kp V &kp V        &kp K     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                       &trans  &trans  &trans    &trans  &trans  &trans
+&kp TAB  &kp Q  &kp W  &kp F  &kp P   &kp B   &kp B     &kp J   &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp BSPC
+&trans   &kp A  &kp R  &kp S  &kp T   &kp G   &kp G     &kp M   &kp M   &kp N   &kp E      &kp I    &kp O     &kp APOS
+&trans   &kp Z  &kp X  &kp C  &kp D   &kp V   &kp V     &kp K   &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                              &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
         qwerty {
             bindings = <
-&kp TAB  &kp Q  &kp W  &kp E   &kp R   &kp T  &kp B        &kp J    &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
-&trans   &kp A  &kp S  &kp D   &kp F   &kp G  &kp G        &kp M    &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
-&trans   &kp Z  &kp X  &kp C   &kp V   &kp B  &kp V        &kp K    &kp N   &kp M   &kp COMMA  &kp DOT  &trans    &trans
-                       &trans  &trans  &trans    &trans  &trans  &trans
+&kp TAB  &kp Q  &kp W  &kp E  &kp R   &kp T   &kp B     &kp J   &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&trans   &kp A  &kp S  &kp D  &kp F   &kp G   &kp G     &kp M   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&trans   &kp Z  &kp X  &kp C  &kp V   &kp B   &kp V     &kp K   &kp N   &kp M   &kp COMMA  &kp DOT  &trans    &trans
+                              &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
         game {
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp E     &kp R   &kp T  &kp B        &kp J       &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
-&mt RCTRL ESCAPE  &kp A  &kp S  &kp D     &kp F   &kp G  &kp G        &kp M       &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
-&kp LSHFT         &kp Z  &kp X  &kp C     &kp V   &kp B  &kp V        &kp K       &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
-                                &kp LALT  &kp N1  &kp SPACE    &trans  &trans  &trans
+&kp TAB           &kp N1  &kp Q  &kp W  &kp E    &kp R  &kp T        &kp J   &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&mt RCTRL ESCAPE  &kp N2  &kp A  &kp S  &kp D    &kp F  &kp G        &kp M   &kp H   &kp J   &kp K      &kp L    &kp SEMI  &trans
+&kp LSHFT         &kp N3  &kp Z  &kp X  &kp C    &kp V  &kp B        &kp K   &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                                        &kp DOT  &kp C  &kp SPACE    &trans  &trans  &trans
             >;
         };
 
@@ -212,37 +209,37 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &none  &none  &none  &none  &none  &kp B        &kp J    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
-&trans  &none  &none  &none  &none  &none  &kp G        &kp M    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
-&none   &none  &none  &none  &none  &none  &kp V        &kp K    &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
-                      &none  &none  &trans    &kp RET    &trans  &trans
+&trans  &none  &none  &none  &none  &none  &kp B     &kp J    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
+&trans  &none  &none  &none  &none  &none  &kp G     &kp M    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
+&none   &none  &none  &none  &none  &none  &kp V     &kp K    &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
+                             &none  &none  &trans    &kp RET  &trans     &trans
             >;
         };
 
         fun {
             bindings = <
-&none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN &kp B        &kp J    &none  &none      &none      &none     &none     &none
-&none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK  &kp G        &kp M    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
-&none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK &kp V        &kp K    &none  &none      &none      &none     &none     &none
-                        &none   &none   &none              &none  &trans     &none
+&none  &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN  &kp B    &kp J  &none   &none      &none      &none     &none     &none
+&none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK   &kp G    &kp M  &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &kp V    &kp K  &none   &none      &none      &none     &none     &none
+                                &none   &none            &none    &none  &trans  &none
             >;
         };
 
         mouse {
             bindings = <
-&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none  &kp B        &kp J       &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
-&none  &none  &none         &none            &none     &none  &kp G        &kp M       &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
-&none  &none  &none         &none            &none     &none  &kp V        &kp K       &none           &none        &none         &none      &none       &none
-                            &mkp MB4         &mkp MB5  &mkp LCLK    &mkp RCLK       &none
+&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none     &kp B        &kp J      &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
+&none  &none  &none         &none            &none     &none     &kp G        &kp M      &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
+&none  &none  &none         &none            &none     &none     &kp V        &kp K      &none           &none        &none         &none      &none       &none
+                                             &mkp MB4  &mkp MB5  &mkp LCLK    &mkp RCLK  &none
             >;
         };
 
         switch {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp B        &kp J   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &to 3         &trans        &trans        &kp G        &kp M   &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &to 0         &to 1         &to 2         &trans        &kp V        &kp K   &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans        &trans        &trans          &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp B     &kp J   &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &to 3         &trans        &trans        &kp G     &kp M   &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &to 0         &to 1         &to 2         &trans        &kp V     &kp K   &trans  &trans  &trans  &trans  &trans  &trans
+                                                      &trans        &trans        &trans    &trans  &trans  &trans
             >;
 
             label = "switch";
@@ -250,10 +247,10 @@
 
         greek {
             bindings = <
-&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta  &kp B        &kp J    &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
-&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma &kp G        &kp M    &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
-&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta &kp V        &kp K    &el_kappa  &el_eta     &trans       &trans    &trans       &trans
-                              &trans     &trans     &trans       &trans     &trans      &trans
+&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta   &kp B     &kp J   &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
+&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma  &kp G     &kp M   &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
+&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta  &kp V     &kp K   &el_kappa  &el_eta     &trans       &trans    &trans       &trans
+                                         &trans     &trans     &trans    &trans  &trans     &trans
             >;
         };
     };
