@@ -146,7 +146,7 @@
 		reg = <0>;
 		status = "okay";
 		spi-max-frequency = <4000000>;
-		disp_gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+		disp_gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
 		extcomin_gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
 		width = <144>;
 		height = <72>;
