@@ -6,7 +6,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 
 / {
     combos {
@@ -123,12 +122,12 @@
         };
 
         switch-left {
-            bindings = <&mo 8>;
+            bindings = <&mo 7>;
             key-positions = <43 44>;
         };
 
         switch-right {
-            bindings = <&mo 8>;
+            bindings = <&mo 7>;
             key-positions = <45 46>;
         };
     };
@@ -179,8 +178,8 @@
             bindings = <
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp MINUS               &kp PIPE               &kp J            &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp M            &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp K            &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 9
-                                                                  &kp LCMD           &lt 3 SPACE  &lt 5 LEFT_SHIFT        &lt 6 ENTER            &lt 7 BACKSPACE  &lt 6 DELETE
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp K            &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
+                                                                  &kp LCMD           &lt 3 SPACE  &lt 5 LEFT_SHIFT        &lt 6 ENTER            &lt 0 BACKSPACE  &lt 6 DELETE
             >;
         };
 
@@ -204,10 +203,10 @@
 
         symbol {
             bindings = <
-&trans  &trans  &kp LS(AMPS)  &kp LS(STAR)   &kp LSHFT      &kp LSHFT  &kp N9    &kp LSHFT  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp TILDE  &kp N6    &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp GRAVE  &kp N3    &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                                             &trans         &trans     &trans    &trans     &trans  &trans
+&trans  &trans  &kp LS(AMPS)  &kp LS(STAR)   &kp LSHFT      &kp LSHFT  &kp N9    &kp LSHFT  &trans    &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp TILDE  &kp N6    &trans     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp GRAVE  &kp N3    &trans     &trans    &trans    &trans  &trans     &trans  &trans
+                                             &trans         &trans     &trans    &trans     &trans    &trans
             >;
         };
 
@@ -231,7 +230,7 @@
 &trans  &kp LS(PLUS)  &kp N7  &kp N8  &kp N9  &none     &kp LEFT_ARROW    &kp J    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
 &trans  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp FSLH  &kp EQUAL         &kp M    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
 &none   &kp N0        &kp N1  &kp N2  &kp N3  &kp DOT   &kp RIGHT         &kp K    &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
-                                      &none   &none     &trans            &kp RET  &mo 8      &trans
+                                      &none   &none     &trans            &kp RET  &mo 7      &trans
             >;
         };
 
@@ -241,15 +240,6 @@
 &none  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK   &kp G    &kp M  &none   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
 &none  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK  &kp V    &kp K  &none   &none      &none      &none     &none     &none
                                 &none   &none            &none    &none  &trans  &none
-            >;
-        };
-
-        mouse {
-            bindings = <
-&none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none  &kp B        &kp J      &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
-&none  &none  &none         &none            &none     &none  &kp G        &kp M      &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
-&none  &none  &none         &none            &none     &none  &kp V        &kp K      &none           &none        &none         &none      &none       &none
-                                             &mkp MB4  &mo 8  &mkp LCLK    &mkp RCLK  &trans          &trans
             >;
         };
 
@@ -279,7 +269,7 @@
 
         switch {
             if-layers = <6 5>;
-            then-layer = <8>;
+            then-layer = <7>;
         };
     };
 };
