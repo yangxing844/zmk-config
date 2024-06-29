@@ -239,7 +239,7 @@
 &none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none     &none  &kp B        &kp J      &kp K_REDO      &kp K_PASTE  &kp K_COPY    &kp K_CUT  &kp K_UNDO  &none
 &none  &none  &none         &none            &none     &none  &kp G        &kp M      &kp LEFT_ARROW  &kp DOWN     &kp UP_ARROW  &kp RIGHT  &none       &none
 &none  &none  &none         &none            &none     &none  &kp V        &kp K      &none           &none        &none         &none      &none       &none
-                                             &mkp MB4  &mo 8  &mkp LCLK    &mkp RCLK  &trans
+                                             &mkp MB4  &mo 8  &mkp LCLK    &mkp RCLK  &trans &trans
             >;
         };
 
