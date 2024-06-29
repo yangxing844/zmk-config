@@ -151,8 +151,8 @@
 		width = <144>;
 		height = <72>;
     color_mode = [02];
-		reverse = <0>;
-		rotation = <0>;
+		reverse = <1>;
+		rotation = <1>;
 	};
 };
 &left_encoder {
