@@ -230,7 +230,7 @@
 &trans  &kp LS(PLUS)  &kp N7  &kp N8  &kp N9  &none     &kp LEFT_ARROW    &kp J    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &kp BSPC
 &trans  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp FSLH  &kp EQUAL         &kp M    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH         &trans
 &none   &kp N0        &kp N1  &kp N2  &kp N3  &kp DOT   &kp RIGHT         &kp K    &kp DOT    &kp N1  &kp N2  &kp N3  &kp N0           &trans
-                                      &none   &none     &trans            &kp RET  &mo 7      &trans
+                                      &none   &none     &trans            &kp RET  &mo 6      &trans
             >;
         };
 
