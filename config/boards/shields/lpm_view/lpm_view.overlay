@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+&lpm_view_spi {
+    status = "okay";
+    lpm_view: lcd@0 {
+        compatible = "jdi,lpm009m360a";
+        spi-max-frequency = <4000000>;
+        reg = <0>;
+				disp_gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
+				extcomin_gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+				width = <144>;
+				height = <72>;
+				color_mode = [02];
+				reverse = <1>;
+				rotation = <1>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &lpm_view;
+    };
+};
