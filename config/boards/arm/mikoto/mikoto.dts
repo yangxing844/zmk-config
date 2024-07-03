@@ -17,7 +17,7 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
-        zephyr,console = &cdc_acm_uart;
+        // zephyr,console = &cdc_acm_uart;
         zmk,battery = &builtin_battery;
     };
 
@@ -82,6 +82,7 @@
 
 	status = "okay";
 };
+
 &uart0 {
     compatible = "nordic,nrf-uarte";
     current-speed = <115200>;
@@ -90,13 +91,16 @@
     pinctrl-names = "default", "sleep";
 };
 
-&usbd {
-    status = "okay";
-    cdc_acm_uart: cdc_acm_uart {
-        compatible = "zephyr,cdc-acm-uart";
-    };
-};
+// &usbd {
+//     status = "okay";
+//     cdc_acm_uart: cdc_acm_uart {
+//         compatible = "zephyr,cdc-acm-uart";
+//     };
+// };
 
+zephyr_udc0:&usbd {
+		status = "okay";
+};
 
 &flash0 {
     /*
