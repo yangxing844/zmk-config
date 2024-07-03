@@ -66,7 +66,12 @@
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
 };
-
+&spi0 {
+		status = "okay";
+		pinctrl-0 = <&spi0_default>;
+		pinctrl-1 = <&spi0_sleep>;
+		pinctrl-names = "default", "sleep";
+};
 &i2c1 {
 	compatible = "nordic,nrf-twi";
 	pinctrl-0 = <&i2c1_default>;

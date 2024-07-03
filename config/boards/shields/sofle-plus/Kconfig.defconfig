@@ -1,7 +1,7 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SOFLE-PLUS_LEFT
+if SHIELD_SOFLE_PLUS_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Sofle"
@@ -11,17 +11,17 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_SOFLE-PLUS_LEFT || SHIELD_SOFLE-PLUS_RIGHT
+if SHIELD_SOFLE_PLUS_LEFT || SHIELD_SOFLE_PLUS_RIGHT
 
 config ZMK_SPLIT
     default y
 
 if ZMK_DISPLAY
 
-config I2C
+config SPI
     default y
 
-config SSD1306
+config LPM009M360A
     default y
 
 endif # ZMK_DISPLAY

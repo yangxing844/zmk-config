@@ -5,21 +5,31 @@
  */
 
 &lpm_view_spi {
-    status = "okay";
-    lpm_view: lcd@0 {
-        compatible = "jdi,lpm009m360a";
-        spi-max-frequency = <4000000>;
-        reg = <0>;
-				disp_gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>;
-				extcomin_gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
-				width = <144>;
-				height = <72>;
-				color_mode = [02];
-				reverse = <1>;
-				rotation = <1>;
-    };
+  compatible ="nordic,nrf-spim";
+  status = "okay";
+  pinctrl-0 = <&spi0_default>;
+  pinctrl-1 = <&spi0_sleep>;
+  pinctrl-names = "default", "sleep";
+
+  cs-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+	lpm_view: lcd@0 {
+		compatible = "jdi,lpm009m360a";
+		reg = <0>;
+		status = "okay";
+		spi-max-frequency = <4000000>;
+		disp_gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+		extcomin_gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+		width = <144>;
+		height = <72>;
+    color_mode = [02];
+		reverse = <1>;
+		rotation = <1>;
+	};
 };
 
+&pro_micro_i2c {
+    status = "disabled";
+};
 / {
     chosen {
         zephyr,display = &lpm_view;
