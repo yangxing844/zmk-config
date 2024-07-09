@@ -22,6 +22,6 @@ manifest:
       revision: main
     - name: zmk-lpm009m360a-driver
       remote: yangxing
-      revision: main
+      revision: master
   self:
     path: config
