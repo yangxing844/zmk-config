@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: yangxing
+      url-base: https://github.com/yangxing844
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -17,6 +19,9 @@ manifest:
       revision: main
     - name: zmk-input-behavior-listener
       remote: badjeff
+      revision: main
+    - name: zmk-lpm009m360a-driver
+      remote: yangxing
       revision: main
   self:
     path: config
