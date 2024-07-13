@@ -5,7 +5,10 @@
 #include "greek.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+<<<<<<< HEAD
 #include <dt-bindings/zmk/ext_power.h>
+=======
+>>>>>>> c9d7f4b (add corne v4 keymap)
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -177,7 +180,11 @@
 
         colemak-dh {
             bindings = <
+<<<<<<< HEAD
 &kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp MINUS               &kp PIPE               &kp J            &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+=======
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &studio_unlock              &kp PIPE               &kp J            &kp L               &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+>>>>>>> c9d7f4b (add corne v4 keymap)
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp M            &hmr RIGHT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp K            &kp H               &kp COMMA             &kp DOT           &kp FSLH     &sl 8
                                                                   &kp LCMD           &lt 3 SPACE  &lt 5 LEFT_SHIFT        &lt 6 ENTER            &lt 7 BACKSPACE  &lt 6 DELETE
