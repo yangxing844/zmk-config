@@ -20,10 +20,8 @@ if ZMK_DISPLAY
 
 config SPI
     default y
-
 config LPM009M360A
     default y
-
 endif # ZMK_DISPLAY
 
 if LVGL
