@@ -27,7 +27,7 @@ endchoice
 
 config I2C
 		default y
-config MAX17048
+config ZMK_MAX17048
 		default y
 
 endif # BOARD_MIKOTO

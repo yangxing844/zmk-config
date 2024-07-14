@@ -31,11 +31,11 @@ endif # USB
 
 if ZMK_DISPLAY
 
-# config I2C
-#     default y
-#
-# config SSD1306
-#     default y
+config SPI
+    default y
+
+config SSD1306
+    default n
 
 config LPM009M360A
 	default y
@@ -63,8 +63,8 @@ endchoice
 
 endif # LVGL
 
-# config ZMK_WIDGET_WPM_STATUS
-# 	default y
+config ZMK_WIDGET_WPM_STATUS
+	default y
 choice BOARD_CHARGER_CURRENT
     default BOARD_CHARGER_CURRENT_100MA
 endchoice
