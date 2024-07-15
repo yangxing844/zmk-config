@@ -155,16 +155,19 @@
 		rotation = <1>;
 	};
 };
+
 &left_encoder {
     status = "okay";
+};
+&matrix_physical_layout {
+  	kscan = <&kscan0>;
 };
 / {
 	chosen {
 		zephyr,display = &lcd0;
 		zmk,underglow = &led_strip;
-		zmk,kscan = &kscan0;
-		zmk,matrix-transform = &default_transform;
 		zmk,battery = &builtin_battery;
+		zmk,physical-layout = &matrix_physical_layout;
 	};
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
@@ -196,6 +199,7 @@
 			 ,<&gpio0 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //1
 		;
 	};
+
 	leds {
 		compatible = "gpio-leds";
 		blue_led: led_0 {

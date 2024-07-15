@@ -5,11 +5,11 @@
 #include <dt-bindings/zmk/rgb.h>
 
 
-/ {
-	chosen {
-		zmk,matrix-transform = &default_transform;
-	};
-};
+// / {
+//     chosen {
+//         zmk,physical-layout = &matrix_physical_layout;
+//     };
+// };
 / {
 
 	keymap {
@@ -23,8 +23,8 @@
 			//                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 			bindings = <
 				&ext_power EP_TOG   &kp Q    &kp W    &kp E     &kp R     &kp T      &kp SPACE        &kp SPACE &kp Y     &kp U     &kp I     &kp O     &kp P    &ext_power EP_TOG
-				&rgb_ug RGB_EFF    &kp A    &kp S    &kp D     &kp F     &kp G      &kp LC(C)        &kp RET   &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-				&rgb_ug RGB_TOG &kp Z    &kp X    &kp C     &kp V     &kp B      &kp LC(A)        &kp LC(V) &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RCTRL
+				&kp A    &kp A    &kp S    &kp D     &kp F     &kp G      &kp LC(C)        &kp RET   &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
+				&kp A &kp Z    &kp X    &kp C     &kp V     &kp B      &studio_unlock       &kp LC(V) &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RCTRL
 				                                      &kp LGUI  &kp DEL    &kp RET          &kp TAB   &kp BSPC  &kp RALT
 			>;
 
