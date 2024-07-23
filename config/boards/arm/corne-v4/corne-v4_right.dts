@@ -157,13 +157,17 @@
 &default_transform {
 		col-offset=<24>;
 };
+
+&matrix_physical_layout {
+  	kscan = <&kscan0>;
+};
 / {
 	chosen {
 		zephyr,display = &lcd0;
 		zmk,underglow = &led_strip;
 		// zmk,kscan = &kscan0;
 		// zmk,matrix-transform = &default_transform;
-		zmk,physical-layout=&matirx_physical_layout;
+		zmk,physical-layout=&matrix_physical_layout;
 		zmk,battery =&builtin_battery;
 	};
 	kscan0: kscan {
@@ -196,9 +200,6 @@
     , <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //8
     , <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //9
     ;
-	};
-	&matrix_physical_layout{
-		kscan = <&kscan0>;
 	};
 	leds {
 		compatible = "gpio-leds";

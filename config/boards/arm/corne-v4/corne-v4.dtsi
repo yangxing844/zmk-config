@@ -35,7 +35,7 @@
 
  matrix_physical_layout: matrix_physical_layout {
  	 compatible = "zmk,physical-layout";
- 	 display-name = "direct Layout";
+ 	 display-name = "direct wiring";
  	
 	 transform = <&default_transform>;
 
