@@ -251,7 +251,6 @@
             key-positions = <37 38>;
         };
     };
-
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -294,7 +293,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-
         colemak-dh {
             bindings = <
 &studio_unlock        &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH

@@ -20,11 +20,12 @@ if ZMK_DISPLAY
 
 config SPI
     default y
-
+config I2C
+		default y
 # config LPM009M360A
 # 	default y
 config SSD1306
-    default n
+    default y
 endif # ZMK_DISPLAY
 
 if LVGL
