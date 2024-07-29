@@ -13,11 +13,11 @@
 #
 
 board: [ "nice_nano_v2","mikoto"]
-shield: [ "corne_left", "corne_right","charybdis_left","charybdis_right","sofle-plus_left","sofle-plus_right"]
+shield: [ "charybdis_left","charybdis_right","sofle-plus_left","sofle-plus_right"]
 
 snippet: ["studio-rpc-usb-uart"]
 
 include:
   - board: corne-v4_left
   - board: corne-v4_right
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
