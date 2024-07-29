@@ -2,4 +2,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: yangxing844/zmk/.github/workflows/build-user-config.yml@main
+    uses: yangxing844/zmk/.github/workflows/build-user-config.yml@remap-with-mouse
