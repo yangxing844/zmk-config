@@ -6,3 +6,6 @@ jobs:
       matrix:
         file-prefix: [pro_micro, blackpill]
     uses: lesshonor/zmk/.github/workflows/build-user-config.yml@fix/use-new-container
+    with:
+      build_matrix_path: ${{ matrix.file-prefix }}.yaml
+      archive_name: ${{ matrix.file-prefix }}
