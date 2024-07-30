@@ -13,7 +13,7 @@
 #
 
 board: [ "nice_nano_v2","mikoto"]
-shield: [ "charybdis_left","charybdis_right","sofle-plus_left lpm_view adapter lpm_view","sofle-plus_right lpm_view_adapter lpm_view"]
+shield: [ "charybdis_left","charybdis_right","sofle-plus_left lpm_view_adapter lpm_view","sofle-plus_right lpm_view_adapter lpm_view"]
 
 snippet: ["studio-rpc-usb-uart"]
 
