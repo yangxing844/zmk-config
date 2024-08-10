@@ -66,7 +66,7 @@ endif # LVGL
 # config ZMK_WIDGET_WPM_STATUS
 # 	default y
 choice BOARD_CHARGER_CURRENT
-    default BOARD_CHARGER_CURRENT_100MA
+    default BOARD_CHARGER_CURRENT_250MA
 endchoice
 
 config I2C
