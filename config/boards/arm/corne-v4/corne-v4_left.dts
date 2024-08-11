@@ -156,9 +156,9 @@
 	};
 };
 
-&left_encoder {
-    status = "okay";
-};
+// &left_encoder {
+//     status = "okay";
+// };
 &matrix_physical_layout {
   	kscan = <&kscan0>;
 };

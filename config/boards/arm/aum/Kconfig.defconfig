@@ -1,17 +1,17 @@
-if BOARD_CORNE_LEFT
+if BOARD_AUM_LEFT
 
 config ZMK_KEYBOARD_NAME
-		default "Corne V4"
+		default "AUM"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 		default y
 
-endif # BOARD_CORNE_LEFT
+endif 
 
-if BOARD_CORNE_LEFT || BOARD_CORNE_RIGHT
+if BOARD_AUM_LEFT || BOARD_AUM_RIGHT
 
 config BOARD
-		default "corne v4"
+		default "AUM"
 
 config ZMK_SPLIT
 		default y
