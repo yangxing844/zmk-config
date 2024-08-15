@@ -18,7 +18,7 @@
 		zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		zephyr,console = &cdc_acm_uart;
+		// zephyr,console = &cdc_acm_uart;
 	};
 
 	default_transform: keymap_transform_0 {
@@ -128,12 +128,12 @@
 };
 
 
-&usbd {
-	status = "okay";
-	cdc_acm_uart: cdc_acm_uart {
-		compatible = "zephyr,cdc-acm-uart";
-	};
-};
+// &usbd {
+// 	status = "okay";
+// 	cdc_acm_uart: cdc_acm_uart {
+// 		compatible = "zephyr,cdc-acm-uart";
+// 	};
+// };
 
 zephyr_udc0: &usbd {
     status = "okay";
