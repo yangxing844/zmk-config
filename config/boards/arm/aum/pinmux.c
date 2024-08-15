@@ -14,7 +14,7 @@
 
 static int pinmux_mikoto_init(void) {
 
-#if CONFIG_BOARD_AUM_V4_LEFT
+#if CONFIG_BOARD_AUM_LEFT
     const struct device *p0 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
     const struct device *p1 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
     int pin1 = 20;
@@ -46,11 +46,11 @@ static int pinmux_mikoto_init(void) {
 
 #endif
 
-#elif CONFIG_BOARD_AUM_V4_RIGHT
+#elif CONFIG_BOARD_AUM_RIGHT
     const struct device *p0 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
-    const struct device *p1 = DEVICE_DT_GET(DT_NODELABEL(gpio1));
-    int pin1 = 3;
-    int pin2 = 14;
+    const struct device *p1 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
+    int pin1 = 31;
+    int pin2 = 29;
 
 #if CONFIG_BOARD_CHARGER_CURRENT_40MA
 			gpio_pin_configure(p0, pin1, GPIO_INPUT | GPIO_PULL_DOWN);

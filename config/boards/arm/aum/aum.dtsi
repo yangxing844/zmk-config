@@ -92,17 +92,15 @@
     };
 left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <30>;
-        status = "disabled";
  };
 right_encoder: encoder_right {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <30>;
-        status = "disabled";
  };
 sensors: sensors {
         compatible = "zmk,keymap-sensors";
@@ -128,12 +126,12 @@ sensors: sensors {
 };
 
 
-&usbd {
-	status = "okay";
-	cdc_acm_uart: cdc_acm_uart {
-		compatible = "zephyr,cdc-acm-uart";
-	};
-};
+// &usbd {
+// 	status = "okay";
+// 	cdc_acm_uart: cdc_acm_uart {
+// 		compatible = "zephyr,cdc-acm-uart";
+// 	};
+// };
 
 zephyr_udc0: &usbd {
     status = "okay";
