@@ -10,12 +10,10 @@
         compatible = "jdi,lpm009m360a";
         spi-max-frequency = <4000000>;
         reg = <0>;
-				disp_gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
-				extcomin_gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>;
 				width = <144>;
 				height = <72>;
 				color_mode = [02];
-				reverse = <0>;
+				reverse = <1>;
 				rotation = <1>;
     };
 };

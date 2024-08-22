@@ -6,7 +6,6 @@ CONFIG_BOARD_CORNE_V4_LEFT=y
 # Enable MPU
 CONFIG_ARM_MPU=y
 
-CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
 # CONFIG_ZMK_RGB_UNDERGLOW=y
 # Use the STRIP config specific to the LEDs you're using
 # CONFIG_WS2812_STRIP=y

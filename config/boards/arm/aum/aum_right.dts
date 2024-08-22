@@ -58,34 +58,17 @@
 	status = "okay";
 };
 
-&spi2 {
-  compatible = "nordic,nrf-spim";
-  status = "okay";
-
-  pinctrl-0 = <&spi2_default>;
-  pinctrl-1 = <&spi2_sleep>;
-  pinctrl-names = "default", "sleep";
-
-	cs-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-	status = "okay";
-	lcd0: lcd@0 {
-		compatible = "jdi,lpm009m360a";
-		reg = <0>;
-		status = "okay";
-		spi-max-frequency = <4000000>;
-		disp_gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
-		extcomin_gpios = <&gpio1	12 GPIO_ACTIVE_HIGH>;
-		width = <144>;
-		height = <72>;
-    color_mode = [02];
-		reverse = <1>;
-		rotation = <1>;
-	};
+lpm_view_spi: &spi2 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 };
 
-&right_encoder {
-    status = "okay";
-};
+// &right_encoder {
+//     status = "okay";
+// };
 &default_transform {
 		col-offset=<24>;
 };

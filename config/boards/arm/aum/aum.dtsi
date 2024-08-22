@@ -18,7 +18,7 @@
 		zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-		zephyr,console = &cdc_acm_uart;
+		// zephyr,console = &cdc_acm_uart;
 	};
 
 	default_transform: keymap_transform_0 {
@@ -90,23 +90,23 @@
             , <&key_physical_attrs 100 100 1100  350       0     0     0>
             ;
     };
-left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <30>;
- };
-right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <30>;
- };
-sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <15>;
-    };
+// left_encoder: encoder_left {
+//         compatible = "alps,ec11";
+//         a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//         b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//         steps = <30>;
+//  };
+// right_encoder: encoder_right {
+//         compatible = "alps,ec11";
+//         a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//         b-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+//         steps = <30>;
+//  };
+// sensors: sensors {
+//         compatible = "zmk,keymap-sensors";
+//         sensors = <&left_encoder &right_encoder>;
+//         triggers-per-rotation = <15>;
+//     };
 };
 
 &adc {

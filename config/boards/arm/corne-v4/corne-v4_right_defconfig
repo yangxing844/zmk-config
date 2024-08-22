@@ -10,11 +10,6 @@ CONFIG_ARM_MPU=y
 # enable GPIO
 CONFIG_GPIO=y
 
-CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
-# CONFIG_ZMK_RGB_UNDERGLOW=y
-# Use the STRIP config specific to the LEDs you're using
-# CONFIG_WS2812_STRIP=y
-# Use pinctrl
 CONFIG_PINCTRL=y
 
 CONFIG_USE_DT_CODE_PARTITION=y
