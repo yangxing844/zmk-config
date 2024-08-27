@@ -73,16 +73,16 @@
         { "row": 4, "col": 13, "x":    21, "y":     4, "label": "\n\n\n\n32" },
         { "row": 4, "col": 14, "x":    22, "y": 4.125, "label": "\n\n\n\n33" },
       
-        { "row": 5, "col":  2, "x":    10, "y":     3, "label": "\n\n\n\n42" },
+        { "row": 5, "col":  2, "x":    10, "y":     1, "label": "\n\n\n\n41" },
         { "row": 5, "col":  3, "x":     9, "y":     2, "label": "\n\n\n\n40" },
-        { "row": 5, "col":  4, "x":    10, "y":     1, "label": "\n\n\n\n41" },
+        { "row": 5, "col":  4, "x":    10, "y":     3, "label": "\n\n\n\n42" },
         { "row": 5, "col":  5, "x":    11, "y":     2, "label": "\n\n\n\n39" },
         { "row": 5, "col":  6, "x":    10, "y":     2, "label": "\n\n\n\n38" },
         { "row": 5, "col":  9, "x":    15, "y":     2, "label": "\n\n\n\n38" },
-        { "row": 5, "col": 10, "x":    14, "y":     2, "label": "\n\n\n\n39" },
-        { "row": 5, "col": 11, "x":    15, "y":     1, "label": "\n\n\n\n41" },
-        { "row": 5, "col": 12, "x":    16, "y":     2, "label": "\n\n\n\n40" },
-        { "row": 5, "col": 13, "x":    15, "y":     3, "label": "\n\n\n\n42" }
+        { "row": 5, "col": 11, "x":    16, "y":     2, "label": "\n\n\n\n40" },
+        { "row": 5, "col": 12, "x":    15, "y":     3, "label": "\n\n\n\n42" },
+        { "row": 5, "col": 13, "x":    14, "y":     2, "label": "\n\n\n\n39" },
+        { "row": 5, "col": 14, "x":    15, "y":     1, "label": "\n\n\n\n41" }
       ]
     }
   }
