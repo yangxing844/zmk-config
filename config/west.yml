@@ -1,15 +1,15 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/petejohanson
+    - name: yangxing
+      url-base: https://github.com/yangxing844
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: yangxing
       url-base: https://github.com/yangxing844
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: feat/pointers-move-scroll
+      remote: yangxing
+      revision: remap-with-mouse
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff

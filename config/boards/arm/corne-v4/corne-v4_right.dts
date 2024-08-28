@@ -10,20 +10,6 @@
 };
 
 &pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>,
-                <NRF_PSEL(TWIM_SCL, 0, 8)>;
-        };
-    };
-
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 6)>,
-                <NRF_PSEL(TWIM_SCL, 0, 8)>;
-            low-power-enable;
-        };
-    };
     i2c1_default: i2c1_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
@@ -103,7 +89,7 @@
 	status = "okay";
 };
 
-&spi2 {
+lpm_view_spi: &spi2 {
   compatible = "nordic,nrf-spim";
   status = "okay";
 
@@ -113,19 +99,6 @@
 
 	cs-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	status = "okay";
-	lcd0: lcd@0 {
-		compatible = "jdi,lpm009m360a";
-		reg = <0>;
-		status = "okay";
-		spi-max-frequency = <4000000>;
-		disp_gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
-		extcomin_gpios = <&gpio0 27 GPIO_ACTIVE_HIGH>;
-		width = <144>;
-		height = <72>;
-    color_mode = [02];
-		reverse = <1>;
-		rotation = <1>;
-	};
 };
 
 // led
@@ -151,18 +124,21 @@
 		};
 };
 
-&right_encoder {
-    status = "okay";
-};
+// &right_encoder {
+//     status = "okay";
+// };
 &default_transform {
 		col-offset=<24>;
+};
+
+&matrix_physical_layout {
+  	kscan = <&kscan0>;
 };
 / {
 	chosen {
 		zephyr,display = &lcd0;
 		zmk,underglow = &led_strip;
-		zmk,kscan = &kscan0;
-		zmk,matrix-transform = &default_transform;
+		zmk,physical-layout=&matrix_physical_layout;
 		zmk,battery =&builtin_battery;
 	};
 	kscan0: kscan {

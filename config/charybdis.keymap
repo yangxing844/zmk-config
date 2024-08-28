@@ -13,12 +13,6 @@
     retro-tap;
 };
 
-// / {
-//     trackball_peripheral_listener {
-//         compatible = "zmk,input-listener";
-//         device = <&trackball>;
-//     };
-// };
 
 / {
     tb0_mmv_ibl {
@@ -72,7 +66,7 @@
         /*       The delta value is accumlated until result >= 1 after cast. */
         /*       The scrolling is preented in hi-res and allow precise scrolling */
 
-        bindings = <&ib_wheel_scaler 1 100>;
+        bindings = <&ib_wheel_scaler 1 64>;
     };
 
     /* adjust cooldown waiting period for mouse key layer (MSK) after activated */
@@ -257,7 +251,6 @@
             key-positions = <37 38>;
         };
     };
-
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -300,10 +293,9 @@
 
     keymap {
         compatible = "zmk,keymap";
-
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&kp TAB        &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
                                                     &kp LEFT_WIN  &lt 11 SPACE       &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
