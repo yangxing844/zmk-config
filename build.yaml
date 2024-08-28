@@ -19,6 +19,8 @@ snippet: ["studio-rpc-usb-uart"]
 
 include:
   - board: corne-v4_left
+    shiled: lpm_view
     snippet: studio-rpc-usb-uart
-  - board: corne-v4_right
+  - board: corne-v4_right\
+    shiled: lpm_view
     snippet: studio-rpc-usb-uart
