@@ -15,7 +15,7 @@ if SHIELD_SOFLE_X_LEFT || SHIELD_SOFLE_X_RIGHT
 
 config ZMK_SPLIT
     default y
-
+endif
 if ZMK_DISPLAY
 
 config SPI
@@ -47,6 +47,4 @@ if ZMK_RGB_UNDERGLOW
 
 config WS2812_STRIP
     default y
-endif
-
 endif

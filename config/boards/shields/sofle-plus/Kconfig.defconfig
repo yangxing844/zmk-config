@@ -15,7 +15,7 @@ if SHIELD_SOFLE_PLUS_LEFT || SHIELD_SOFLE_PLUS_RIGHT
 
 config ZMK_SPLIT
     default y
-
+endif
 if ZMK_DISPLAY
 
 config SPI

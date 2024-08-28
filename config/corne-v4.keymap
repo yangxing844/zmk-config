@@ -1,8 +1,6 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
-#include "helper.h"
-#include "greek.dtsi"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
@@ -254,15 +252,6 @@
 
             label = "switch";
         };
-
-        greek {
-            bindings = <
-&trans  &el_theta  &el_omega  &el_phi    &el_pi     &el_beta   &kp B     &kp J   &trans     &el_lambda  &el_upsilon  &el_psi   &trans       &trans
-&trans  &el_alpha  &el_rho    &el_sigma  &el_tau    &el_gamma  &kp G     &kp M   &el_mu     &el_nu      &el_epsilon  &el_iota  &el_omikron  &trans
-&trans  &el_zeta   &el_xi     &el_chi    &el_delta  &el_theta  &kp V     &kp K   &el_kappa  &el_eta     &trans       &trans    &trans       &trans
-                                         &trans     &trans     &trans    &trans  &trans     &trans
-            >;
-        };
     };
 
     conditional_layers {
@@ -273,3 +262,5 @@
             then-layer = <7>;
         };
     };
+
+     };
