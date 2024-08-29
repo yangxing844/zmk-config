@@ -43,7 +43,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_BRIGHTNESS_INC C_BRI_UP>;
+                <&inc_dec_kp C_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         lower_layer {
