@@ -28,14 +28,6 @@
         };
     };
 
-    behaviors {
-        scroll_encoder: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        };
-            tap-ms = <100>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -50,7 +42,7 @@
             &kp LALT   &kp LGUI  &kp BSPC  &kp LCTRL  &lt 1 RET                                      &lt 2 LG(I)  &kp RET    &kp SPACE  &kp BSLH  &kp PSCRN
                        &kp UP    &kp LEFT  &kp DOWN   &kp RIGHT  &kp K_MUTE      &kp INS                          &kp END    &kp PG_DN  &kp HOME  &kp PG_UP
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
