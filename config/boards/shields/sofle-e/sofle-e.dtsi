@@ -34,7 +34,7 @@ lpm_view_spi: &spi2 {
 
 / {
     chosen {
-				zephyr,display = &oled;
+				// zephyr,display = &oled;
         zmk,physical-layout = &sofle_e;
     };
     sofle_e_transform: keymap_transform_0 {
