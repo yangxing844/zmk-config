@@ -1,5 +1,5 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_NICE_VIEW
+config SHIELD_LPM_VIEW
     def_bool $(shields_list_contains,lpm_view)
