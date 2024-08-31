@@ -90,23 +90,35 @@
             , <&key_physical_attrs 100 100 1100  350       0     0     0>
             ;
     };
-// left_encoder: encoder_left {
-//         compatible = "alps,ec11";
-//         a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//         b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//         steps = <30>;
-//  };
-// right_encoder: encoder_right {
-//         compatible = "alps,ec11";
-//         a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//         b-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-//         steps = <30>;
-//  };
-// sensors: sensors {
-//         compatible = "zmk,keymap-sensors";
-//         sensors = <&left_encoder &right_encoder>;
-//         triggers-per-rotation = <15>;
-//     };
+left_pana_encoder: encoder_left_pana {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+right_pana_encoder: encoder_right_pana {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder &left_pana_encoder &right_pana_encoder>;
+        triggers-per-rotation = <15>;
+    };
 };
 
 &adc {
@@ -126,12 +138,6 @@
 };
 
 
-// &usbd {
-// 	status = "okay";
-// 	cdc_acm_uart: cdc_acm_uart {
-// 		compatible = "zephyr,cdc-acm-uart";
-// 	};
-// };
 
 zephyr_udc0: &usbd {
     status = "okay";

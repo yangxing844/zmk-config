@@ -68,9 +68,19 @@ lpm_view_spi: &spi2 {
     cs-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
-// &left_encoder {
-//     status = "okay";
-// };
+nice_view_spi: &spi2 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+};
+&left_encoder {
+    status = "okay";
+};
+&left_pana_encoder {
+    status = "okay";
+};
 &matrix_physical_layout {
   	kscan = <&kscan0>;
 };
@@ -102,7 +112,7 @@ lpm_view_spi: &spi2 {
 			, <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //15
 			, <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //10
 			, <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //7
-			, <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //2
+			, <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //2
 			, <&gpio0 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex3
 			, <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 9
 			, <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 8
