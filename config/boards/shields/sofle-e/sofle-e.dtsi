@@ -32,6 +32,14 @@ lpm_view_spi: &spi2 {
     cs-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
 };
 
+nice_view_spi: &spi2 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+};
+
 / {
     chosen {
 				// zephyr,display = &oled;
