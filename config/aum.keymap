@@ -26,7 +26,6 @@
 &kp LEFT_SHIFT    &kp Z  &kp X  &kp C  &kp V     &kp B        &bt BT_CLR_ALL    &kp LC(V)  &kp N            &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RCTRL
                                        &kp LGUI  &lt 1 SPACE  &kp RET           &kp TAB    &lt 2 BACKSPACE  &kp RALT
             >;
-
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
@@ -37,6 +36,7 @@
 &trans  &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0     &trans    &trans  &trans    &trans    &trans        &trans     &trans  &trans
                                          &trans  &trans     &trans    &trans  &trans    &trans
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         layer_2 {
@@ -46,6 +46,7 @@
 &trans  &trans  &kp F1  &kp F2  &kp F3  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
