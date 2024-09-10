@@ -13,6 +13,5 @@
 #
 
 board: [ "aum_left","aum_right" ]
-shield: [ "nice_view"]
-snippet: studio-rpc-usb-uart
+
 
