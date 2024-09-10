@@ -89,7 +89,6 @@ nice_view_spi: &spi2 {
 };
 / {
 	chosen {
-		zephyr,display = &lcd0;
 		zmk,physical-layout=&matrix_physical_layout;
 		zmk,battery =&builtin_battery;
 	};
