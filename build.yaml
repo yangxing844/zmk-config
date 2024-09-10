@@ -12,21 +12,9 @@
 #     shield: reviung41
 #
 
-board: [ "nice_nano_v2","mikoto"]
-shield: [ "charybdis_left","charybdis_right","sofle-plus_left lpm_view_adapter lpm_view","sofle-plus_right lpm_view_adapter lpm_view","sofle-e_left lpm_view","sofle-e_right lpm_view","sofle-x_left lpm_view","sofle-x_right lpm_view"]
-
-snippet: ["studio-rpc-usb-uart"]
-
-include:
-  - board: corne-v4_left
-    shield: lpm_view
-    snippet: studio-rpc-usb-uart
-  - board: corne-v4_right
-    shield: lpm_view
-    snippet: studio-rpc-usb-uart
 - board: aum_left
     shield: nice_view
     snippet: studio-rpc-usb-uart
-  - board: aum_right
+- board: aum_right
     shield: nice_view
     snippet: studio-rpc-usb-uart
