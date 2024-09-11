@@ -1,4 +1,6 @@
 ---
 include:
   - board: aum_left
+  - shield: nice_view
   - board: aum_right
+  - shield: nice_view
