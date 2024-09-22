@@ -30,15 +30,10 @@ config USB_DEVICE_STACK
 endif # USB
 
 if ZMK_DISPLAY
-
 config SPI
     default y
-
 config SSD1306
     default n
-
-config LPM009M360A
-	default y
 endif # ZMK_DISPLAY
 
 

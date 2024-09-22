@@ -84,13 +84,10 @@ nice_view_spi: &spi2 {
 		col-offset=<24>;
 };
 
-&matrix_physical_layout {
-  	kscan = <&kscan0>;
-};
 / {
 	chosen {
-		zmk,physical-layout=&matrix_physical_layout;
 		zmk,battery =&builtin_battery;
+    zmk,kscan = &kscan0;
 	};
 	kscan0: kscan {
 		
