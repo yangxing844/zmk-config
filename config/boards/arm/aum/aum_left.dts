@@ -81,13 +81,10 @@ nice_view_spi: &spi2 {
 &left_pana_encoder {
     status = "okay";
 };
-&matrix_physical_layout {
-  	kscan = <&kscan0>;
-};
 / {
 	chosen {
 		zmk,battery = &builtin_battery;
-		zmk,physical-layout = &matrix_physical_layout;
+    zmk,kscan = &kscan0;
 	};
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
