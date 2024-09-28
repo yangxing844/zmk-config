@@ -10,22 +10,22 @@
 };
 
 &pinctrl {
-    // i2c1_default: i2c1_default {
-    //     group1 {
-    //         psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
-    //             <NRF_PSEL(TWIM_SCL, 1, 0)>;
-				// 		bias-pull-up;
-    //     };
-    // };
-    //
-    // i2c1_sleep: i2c1_sleep {
-    //     group1 {
-    //         psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
-    //             <NRF_PSEL(TWIM_SCL, 1, 0)>;
-    //         low-power-enable;
-				// 		bias-pull-up;
-    //     };
-    // };
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+						bias-pull-up;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 24)>,
+                <NRF_PSEL(TWIM_SCL, 1, 0)>;
+            low-power-enable;
+						bias-pull-up;
+        };
+    };
 
     spi2_default: spi2_default {
 				group1 {
@@ -44,21 +44,21 @@
 };
 
 
-// &i2c1 {
-// 	compatible = "nordic,nrf-twi";
-// 	pinctrl-0 = <&i2c1_default>;
-// 	pinctrl-1 = <&i2c1_sleep>;
-// 	pinctrl-names = "default", "sleep"; 
-// 	
-//
-// 	builtin_battery: max17048@36 {
-// 		compatible = "zmk,maxim-max17048";
-// 		status = "okay";
-// 		reg = <0x36>;
-// 	};
-//
-// 	status = "okay";
-// };
+&i2c1 {
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep"; 
+	
+
+	builtin_battery: max17048@36 {
+		compatible = "zmk,maxim-max17048";
+		status = "okay";
+		reg = <0x36>;
+	};
+
+	status = "okay";
+};
 
 lpm_view_spi: &spi2 {
     compatible = "nordic,nrf-spim";
@@ -81,14 +81,14 @@ nice_view_spi: &spi2 {
 &left_pana_encoder {
     status = "okay";
 };
+&matrix_physical_layout {
+  	kscan = <&kscan0>;
+};
 / {
 	chosen {
-		zmk,battery = &vbatt;
-    zmk,kscan = &kscan0;
+		zmk,battery = &builtin_battery;
+		zmk,physical-layout = &matrix_physical_layout;
 	};
-   vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-    };
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		wakeup-source;

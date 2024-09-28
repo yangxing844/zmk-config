@@ -7,6 +7,7 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 
 / {
@@ -17,7 +18,6 @@
 		zephyr,code-partition = &code_partition;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
-    zmk,matrix-transform = &default_transform;
 		// zephyr,console = &cdc_acm_uart;
 	};
 
@@ -33,28 +33,89 @@
 		>;
 	};
 
+ matrix_physical_layout: matrix_physical_layout {
+ 	 compatible = "zmk,physical-layout";
+ 	 display-name = "direct wiring";
+ 	
+	 transform = <&default_transform>;
+
+ keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0   75       0     0     0>
+            , <&key_physical_attrs 100 100  100   75       0     0     0>
+            , <&key_physical_attrs 100 100  200   25       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400   25       0     0     0>
+            , <&key_physical_attrs 100 100  500   50       0     0     0>
+            , <&key_physical_attrs 100 100  600   75       0     0     0>
+            , <&key_physical_attrs 100 100  900   75       0     0     0>
+            , <&key_physical_attrs 100 100 1000   50       0     0     0>
+            , <&key_physical_attrs 100 100 1100   25       0     0     0>
+            , <&key_physical_attrs 100 100 1200    0       0     0     0>
+            , <&key_physical_attrs 100 100 1300   25       0     0     0>
+            , <&key_physical_attrs 100 100 1400   75       0     0     0>
+            , <&key_physical_attrs 100 100 1500   75       0     0     0>
+            , <&key_physical_attrs 100 100    0  175       0     0     0>
+            , <&key_physical_attrs 100 100  100  175       0     0     0>
+            , <&key_physical_attrs 100 100  200  125       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
+            , <&key_physical_attrs 100 100  400  125       0     0     0>
+            , <&key_physical_attrs 100 100  500  150       0     0     0>
+            , <&key_physical_attrs 100 100  600  175       0     0     0>
+            , <&key_physical_attrs 100 100  900  175       0     0     0>
+            , <&key_physical_attrs 100 100 1000  150       0     0     0>
+            , <&key_physical_attrs 100 100 1100  125       0     0     0>
+            , <&key_physical_attrs 100 100 1200  100       0     0     0>
+            , <&key_physical_attrs 100 100 1300  125       0     0     0>
+            , <&key_physical_attrs 100 100 1400  175       0     0     0>
+            , <&key_physical_attrs 100 100 1500  175       0     0     0>
+            , <&key_physical_attrs 100 100    0  275       0     0     0>
+            , <&key_physical_attrs 100 100  100  275       0     0     0>
+            , <&key_physical_attrs 100 100  200  225       0     0     0>
+            , <&key_physical_attrs 100 100  300  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  225       0     0     0>
+            , <&key_physical_attrs 100 100  500  250       0     0     0>
+            , <&key_physical_attrs 100 100  600  275       0     0     0>
+            , <&key_physical_attrs 100 100  900  275       0     0     0>
+            , <&key_physical_attrs 100 100 1000  250       0     0     0>
+            , <&key_physical_attrs 100 100 1100  225       0     0     0>
+            , <&key_physical_attrs 100 100 1200  200       0     0     0>
+            , <&key_physical_attrs 100 100 1300  225       0     0     0>
+            , <&key_physical_attrs 100 100 1400  275       0     0     0>
+            , <&key_physical_attrs 100 100 1500  275       0     0     0>
+            , <&key_physical_attrs 100 100  400  350       0     0     0>
+            , <&key_physical_attrs 100 100  400  350    1500   450   800>
+            , <&key_physical_attrs 100 100  400  350    3000   450   800>
+            , <&key_physical_attrs 100 100 1100  350 (-3000)  1150   800>
+            , <&key_physical_attrs 100 100 1100  350 (-1500)  1150   800>
+            , <&key_physical_attrs 100 100 1100  350       0     0     0>
+            ;
+    };
 left_pana_encoder: encoder_left_pana {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        status = "disabled";
         steps = <30>;
  };
 left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        status = "disabled";
         steps = <30>;
  };
 right_pana_encoder: encoder_right_pana {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        status = "disabled";
         steps = <30>;
  };
 right_encoder: encoder_right {
         compatible = "alps,ec11";
         a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        status = "disabled";
         steps = <30>;
  };
 sensors: sensors {

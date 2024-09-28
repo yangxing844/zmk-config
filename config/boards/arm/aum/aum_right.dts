@@ -7,25 +7,43 @@
 		control-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <50>;
 	};
+
+right_pana_encoder: encoder_right_pana {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <30>;
+ };
+sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&right_encoder &right_pana_encoder>;
+        triggers-per-rotation = <15>;
+    };
 };
 
 &pinctrl {
-    // i2c1_default: i2c1_default {
-    //     group1 {
-    //         psels = <NRF_PSEL(TWIM_SDA, 1, 15)>,
-    //             <NRF_PSEL(TWIM_SCL, 0, 2)>;
-				// 		bias-pull-up;
-    //     };
-    // };
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 15)>,
+                <NRF_PSEL(TWIM_SCL, 0, 2)>;
+						bias-pull-up;
+        };
+    };
 
-    // i2c1_sleep: i2c1_sleep {
-    //     group1 {
-    //         psels = <NRF_PSEL(TWIM_SDA, 1, 15)>,
-    //             <NRF_PSEL(TWIM_SCL, 0, 2)>;
-    //         low-power-enable;
-				// 		bias-pull-up;
-    //     };
-    // };
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 15)>,
+                <NRF_PSEL(TWIM_SCL, 0, 2)>;
+            low-power-enable;
+						bias-pull-up;
+        };
+    };
 		spi2_default: spi2_default {
 				group1 {
 						psels = <NRF_PSEL(SPIM_MOSI, 0, 12)>,
@@ -42,21 +60,21 @@
 		};
 };
 
-// &i2c1 {
-// 	compatible = "nordic,nrf-twi";
-// 	pinctrl-0 = <&i2c1_default>;
-// 	pinctrl-1 = <&i2c1_sleep>;
-// 	pinctrl-names = "default", "sleep"; 
-// 	
-//
-// 	builtin_battery: max17048@36 {
-// 		compatible = "zmk,maxim-max17048";
-// 		status = "okay";
-// 		reg = <0x36>;
-// 	};
-//
-// 	status = "okay";
-// };
+&i2c1 {
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep"; 
+	
+
+	builtin_battery: max17048@36 {
+		compatible = "zmk,maxim-max17048";
+		status = "okay";
+		reg = <0x36>;
+	};
+
+	status = "okay";
+};
 
 lpm_view_spi: &spi2 {
     compatible = "nordic,nrf-spim";
@@ -86,12 +104,9 @@ nice_view_spi: &spi2 {
 
 / {
 	chosen {
-		zmk,battery =&vbatt;
+		zmk,battery =&builtin_battery;
     zmk,kscan = &kscan0;
 	};
-   vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-    };
 	kscan0: kscan {
 		
 		compatible = "zmk,kscan-gpio-direct";
