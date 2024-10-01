@@ -28,7 +28,7 @@
 &trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS   &trans         &trans  &trans    &trans    &trans        &trans     &trans  &trans
 &trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS  &trans         &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &trans  &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0     &bootloader    &trans  &trans    &trans    &trans        &trans     &trans  &trans
-                                         &trans  &trans     &trans         &trans  &trans    &trans
+                                         &trans  &trans     &trans         &trans  &mo 5     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -66,7 +66,7 @@
         layer_5 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &tog 3  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
             >;
