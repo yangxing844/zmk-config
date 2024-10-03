@@ -144,18 +144,6 @@ combos {
             layers = <0>;
         };
 
-        delete {
-            bindings = <&mkp LCLK>;
-            key-positions = <26 27>;
-            layers = <0>;
-        };
-
-        rclk {
-            bindings = <&mkp RCLK>;
-            key-positions = <19 20>;
-            layers = <1>;
-        };
-
         lclk {
             bindings = <&kp ENTER>;
             key-positions = <15 16>;
