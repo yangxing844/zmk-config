@@ -2,12 +2,194 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
+   combos {
         compatible = "zmk,combos";
 
-        delete {
-            bindings = <&kp DELETE>;
+        bracket {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        bracket_r {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <21 20>;
+            layers = <0>;
+        };
+
+        lb {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <31 32>;
+            layers = <0>;
+        };
+
+        rb {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <32 33>;
+            layers = <0>;
+        };
+
+        lf {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <31 32>;
+            layers = <0>;
+        };
+
+        rba {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <32 33>;
+            layers = <0>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
             key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <19 18>;
+            layers = <0>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <30 31>;
+            layers = <0>;
+        };
+
+        multiplu {
+            bindings = <&kp KP_ASTERISK>;
+            key-positions = <9 10>;
+            layers = <0>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <21 22>;
+            layers = <0>;
+        };
+
+        and {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <9 8>;
+            layers = <0>;
+        };
+
+        at {
+            bindings = <&kp AT>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        tick {
+            bindings = <&kp GRAVE>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
+        dollar {
+            bindings = <&kp TILDE>;
+            key-positions = <4 5>;
+            layers = <0>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <28 29>;
+            layers = <0>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <6 7>;
+            layers = <0>;
+        };
+
+        retern {
+            bindings = <&kp RETURN>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        exam {
+            bindings = <&kp EXCL>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        backspace {
+            bindings = <&mt DELETE BACKSPACE>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        lclk {
+            bindings = <&kp ENTER>;
+            key-positions = <15 16>;
+            layers = <1>;
+        };
+
+        switch {
+            bindings = <&mo 8>;
+            key-positions = <39 40>;
+        };
+
+        reverse {
+            bindings = <&sl 10>;
+            key-positions = <37 38>;
+        };
+    };
+    behaviors {
+        hml: homewrow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homewrow_mods_left";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <6 7 9 8 10 11 23 22 35 34 33 21 20 19 18 30 31 32 41 40 39>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-on-release;
+        };
+
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            flavor = "balanced";
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-on-release;
+        };
+
+        tap_preferred: tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <40>;
+            flavor = "tap-preferred";
         };
     };
 
