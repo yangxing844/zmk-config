@@ -214,9 +214,9 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&kp TAB           &kp Q              &kp W         &kp F            &kp P            &kp B        &kp LS(LPAR)    &kp LS(RPAR)  &kp J            &kp L             &kp U             &kp Y         &kp SEMI           &kp BSPC
-&mt LCTRL ESCAPE  &hml A LEFT_SHIFT  &hml RCTRL R  &hml S LEFT_ALT  &hml T LEFT_WIN  &kp G        &kp LBKT        &kp RBKT      &kp M            &hmr N RIGHT_WIN  &hmr E RIGHT_ALT  &hmr I RCTRL  &hmr O LEFT_SHIFT  &kp SQT
-&kp LEFT_SHIFT    &kp Z              &kp X         &kp C            &kp D            &kp V        &kp LS(LBRC)    &kp LS(RBRC)  &kp K            &kp H             &kp COMMA         &kp DOT       &kp FSLH           &kp RSHFT
+&kp TAB           &kp Q              &kp W         &kp F            &kp P            &kp B        &kp LS(LPAR)    &kp LS(RPAR)  &kp J            &kp L             &kp U            &kp Y                 &kp SEMI           &kp BSPC
+&mt LCTRL ESCAPE  &hml LEFT_SHIFT A  &hml RCTRL R  &hml LEFT_ALT S  &hml LEFT_WIN T  &kp G        &kp LBKT        &kp RBKT      &kp M            &hmr RIGHT_GUI N  &hmr LEFT_ALT E  &hmr RIGHT_CONTROL I  &hmr O LEFT_SHIFT  &kp SQT
+&kp LEFT_SHIFT    &kp Z              &kp X         &kp C            &kp D            &kp V        &kp LS(LBRC)    &kp LS(RBRC)  &kp K            &kp H             &kp COMMA        &kp DOT               &kp FSLH           &kp RSHFT
                                                                     &kp LGUI         &lt 1 SPACE  &lt 2 TAB       &kp ENTER     &lt 3 BACKSPACE  &kp RALT
             >;
 
