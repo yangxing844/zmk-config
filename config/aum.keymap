@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-   combos {
+    combos {
         compatible = "zmk,combos";
 
         bracket {
@@ -42,7 +42,7 @@
         };
 
         plus {
-            bindings = <&kp PLUS>;
+            bindings = <&kp DELETE>;
             key-positions = <16 17>;
             layers = <0>;
         };
@@ -153,6 +153,7 @@
             key-positions = <37 38>;
         };
     };
+
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -193,6 +194,15 @@
         };
     };
 
+    macros {
+        ceo: ceo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp ENTER &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER &kp DOWN &kp ENTER>;
+            label = "CEO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -204,10 +214,10 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&kp TAB           &kp Q  &kp W  &kp F  &kp P     &kp B        &kp LS(LPAR)    &kp LS(RPAR)  &kp J            &kp L     &kp U      &kp Y    &kp SEMI  &kp BSPC
-&mt LCTRL ESCAPE  &kp A  &kp R  &kp S  &kp T     &kp G        &kp LBKT        &kp RBKT      &kp M            &kp N     &kp E      &kp I    &kp O     &kp SQT
-&kp LEFT_SHIFT    &kp Z  &kp X  &kp C  &kp D     &kp V        &kp LS(LBRC)    &kp LS(RBRC)  &kp K            &kp H     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                       &kp LGUI  &lt 1 SPACE  &lt 2 TAB       &kp ENTER     &lt 3 BACKSPACE  &kp RALT
+&kp TAB           &kp Q              &kp W         &kp F            &kp P            &kp B        &kp LS(LPAR)    &kp LS(RPAR)  &kp J            &kp L             &kp U             &kp Y         &kp SEMI           &kp BSPC
+&mt LCTRL ESCAPE  &hml A LEFT_SHIFT  &hml RCTRL R  &hml S LEFT_ALT  &hml T LEFT_WIN  &kp G        &kp LBKT        &kp RBKT      &kp M            &hmr N RIGHT_WIN  &hmr E RIGHT_ALT  &hmr I RCTRL  &hmr O LEFT_SHIFT  &kp SQT
+&kp LEFT_SHIFT    &kp Z              &kp X         &kp C            &kp D            &kp V        &kp LS(LBRC)    &kp LS(RBRC)  &kp K            &kp H             &kp COMMA         &kp DOT       &kp FSLH           &kp RSHFT
+                                                                    &kp LGUI         &lt 1 SPACE  &lt 2 TAB       &kp ENTER     &lt 3 BACKSPACE  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -244,9 +254,9 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        layer_3 {
+        game {
             bindings = <
-&kp TAB    &kp N1  &kp Q  &kp W  &kp E   &kp R      &kp T    &kp Y   &kp U   &kp I      &kp O    &kp P     &trans    &trans
+&kp TAB    &ceo    &kp Q  &kp W  &kp E   &kp R      &kp T    &kp Y   &kp U   &kp I      &kp O    &kp P     &trans    &trans
 &kp ESC    &kp N2  &kp A  &kp S  &kp D   &kp F      &kp G    &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp APOS  &trans
 &kp LSHFT  &kp N3  &kp Z  &kp X  &kp C   &kp V      &kp B    &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans    &trans
                                  &trans  &kp SPACE  &mo 1    &trans  &trans  &trans
