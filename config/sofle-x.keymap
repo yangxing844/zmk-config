@@ -62,8 +62,6 @@
                           &trans        &trans        &trans  &trans  &trans                 &trans  &trans  &trans  &trans  &trans
                           &mmv MOVE_UP  &trans        &trans  &trans  &trans                 &trans  &trans  &trans  &trans  &mkp LCLK
             >;
-
-            sensor-bindings = <&inc_dec_kp 0 0>, <&inc_dec_kp 0 0>;
         };
     };
 };
