@@ -57,21 +57,6 @@
 		};
 };
 
-// oled 
-// &i2c0 {
-// 	status = "okay";
-// 	compatible = "nordic,nrf-twi";
-// 	pinctrl-0 = <&i2c0_default>;
-// 	pinctrl-1 = <&i2c0_sleep>;
-// 	pinctrl-names = "default", "sleep";
-// 	
-// 	corne_oled: oled@0 {
-// 		compatible = "solomon,ssd1306";
-// 		reg = <0x3c>;
-// 		width = <128>;
-// 		height = <64>;
-// 	};
-// };
 // fuel gauge
 &i2c1 {
 	compatible = "nordic,nrf-twi";
@@ -101,6 +86,17 @@ lpm_view_spi: &spi2 {
 	status = "okay";
 };
 
+nice_view_spi: &spi2 {
+  compatible = "nordic,nrf-spim";
+  status = "okay";
+
+  pinctrl-0 = <&spi2_default>;
+  pinctrl-1 = <&spi2_sleep>;
+  pinctrl-names = "default", "sleep";
+
+	cs-gpios = <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+	status = "okay";
+};
 // led
 &spi3 {
 	status = "okay";
@@ -131,14 +127,11 @@ lpm_view_spi: &spi2 {
 		col-offset=<24>;
 };
 
-&matrix_physical_layout {
-  	kscan = <&kscan0>;
-};
 / {
 	chosen {
 		zmk,underglow = &led_strip;
-		zmk,physical-layout=&matrix_physical_layout;
-		zmk,battery =&builtin_battery;
+		zmk,battery = &builtin_battery;
+		zmk,kscan= &kscan0;
 	};
 	kscan0: kscan {
 		

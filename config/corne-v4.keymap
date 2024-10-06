@@ -244,7 +244,7 @@
 
         switch {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &studio_unlock               &kp J        &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none               &kp J        &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &trans        &to 4         &trans        &trans        &ext_power EP_TOG    &kp M        &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &trans        &to 0         &to 1         &to 2         &trans        &bootloader          &bootloader  &trans  &trans  &trans  &trans  &trans  &trans
                                                       &trans        &trans        &trans               &trans       &trans  &trans

@@ -1,0 +1,21 @@
+# Electronut Labs Papyr board configuration
+
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_DONGLE_833
+
+config BOARD
+    default "dongle 833"
+
+
+if USB_DEVICE_STACK 
+
+config USB_NRFX
+    default y
+
+
+endif 
+config BT_CTLR
+    default BT
+endif 

@@ -11,7 +11,6 @@
     retro-tap;
 };
 
-
 / {
     tb0_mmv_ibl {
         compatible = "zmk,input-behavior-listener";
@@ -249,6 +248,7 @@
             key-positions = <37 38>;
         };
     };
+
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -291,12 +291,13 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         colemak-dh {
             bindings = <
-&kp TAB        &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
 &mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
 &kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
-                                                    &kp LEFT_WIN  &lt 11 SPACE       &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
+                                                    &kp LEFT_WIN  &lt 10 SPACE       &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
@@ -377,7 +378,6 @@
 
             label = "switch";
         };
-
 
         reverse {
             bindings = <
