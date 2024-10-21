@@ -211,6 +211,11 @@
             bindings = <&sl 10>;
             key-positions = <37 38>;
         };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <5 6>;
+        };
     };
 
     behaviors {
