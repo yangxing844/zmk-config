@@ -90,7 +90,7 @@
 
         bracket {
             bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <19 20>;
+            key-positions = <16 15>;
             layers = <0>;
         };
 
@@ -102,7 +102,7 @@
 
         lb {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <31 32>;
+            key-positions = <27 28>;
             layers = <0>;
         };
 
@@ -114,7 +114,7 @@
 
         lf {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <31 32>;
+            key-positions = <27 26>;
             layers = <0>;
         };
 
@@ -136,12 +136,6 @@
             layers = <0>;
         };
 
-        caret {
-            bindings = <&kp CARET>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
         underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <30 31>;
@@ -156,19 +150,7 @@
 
         pipe {
             bindings = <&kp PIPE>;
-            key-positions = <21 22>;
-            layers = <0>;
-        };
-
-        and {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <9 8>;
-            layers = <0>;
-        };
-
-        at {
-            bindings = <&kp AT>;
-            key-positions = <2 3>;
+            key-positions = <7 8>;
             layers = <0>;
         };
 
@@ -178,15 +160,9 @@
             layers = <0>;
         };
 
-        hash {
-            bindings = <&kp HASH>;
-            key-positions = <3 4>;
-            layers = <0>;
-        };
-
         dollar {
             bindings = <&kp TILDE>;
-            key-positions = <4 5>;
+            key-positions = <3 4>;
             layers = <0>;
         };
 
@@ -199,12 +175,6 @@
         percent {
             bindings = <&kp PERCENT>;
             key-positions = <6 7>;
-            layers = <0>;
-        };
-
-        retern {
-            bindings = <&kp RETURN>;
-            key-positions = <15 16>;
             layers = <0>;
         };
 
@@ -229,12 +199,6 @@
         rclk {
             bindings = <&mkp RCLK>;
             key-positions = <19 20>;
-            layers = <1>;
-        };
-
-        lclk {
-            bindings = <&kp ENTER>;
-            key-positions = <15 16>;
             layers = <1>;
         };
 
@@ -294,10 +258,10 @@
 
         colemak-dh {
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B        &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
-&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G        &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
-&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V        &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
-                                                    &kp LEFT_WIN  &lt 10 SPACE       &lt 6 TAB    &lt 7 ENTER  &mt DELETE BACKSPACE
+&kp TAB           &kp Q            &kp W            &kp F         &kp P              &kp B           &kp J        &kp L                 &kp U                 &kp Y             &kp SEMI     &kp BACKSLASH
+&mt RCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G           &kp M        &hmr RIGHT_SHIFT N    &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr RGUI O  &kp APOS
+&kp LSHFT         &kp Z            &kp X            &kp C         &kp D              &kp V           &kp K        &kp H                 &kp COMMA             &kp DOT           &kp FSLH     &sl 9
+                                                    &kp LEFT_WIN  &lt 6 SPACE        &lt 10 ENTER    &lt 7 ENTER  &mt DELETE BACKSPACE
             >;
         };
 
