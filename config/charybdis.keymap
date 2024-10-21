@@ -354,10 +354,10 @@
 
         sym {
             bindings = <
-&trans  &kp LEFT_BRACKET  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET    &trans    &trans    &trans        &trans     &trans  &trans
-&trans  &kp COLON         &kp DOLLAR  &kp PERCENT   &kp CARET             &kp PLUS             &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
-&trans  &kp TILDE         &kp EXCL    &kp AT        &kp DOLLAR            &kp PIPE             &trans    &trans    &trans        &trans     &trans  &trans
-                                      &trans        &trans                &trans               &trans    &trans
+&trans  &kp LEFT_BRACKET  &kp AMPS    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET        &trans    &trans    &trans        &trans     &trans  &trans
+&trans  &kp COLON         &kp DOLLAR  &kp PERCENT   &kp CARET             &kp PLUS                 &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &kp TILDE         &kp EXCL    &kp AT        &kp DOLLAR            &kp RIGHT_PARENTHESIS    &trans    &trans    &trans        &trans     &trans  &trans
+                                      &trans        &trans                &trans                   &trans    &trans
             >;
         };
     };
