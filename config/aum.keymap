@@ -20,31 +20,31 @@
 
         lb {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <31 32>;
+            key-positions = <16 17>;
             layers = <0>;
         };
 
         rb {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <32 33>;
+            key-positions = <24 25>;
             layers = <0>;
         };
 
         lf {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <31 32>;
+            key-positions = <15 16>;
             layers = <0>;
         };
 
         rba {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <32 33>;
+            key-positions = <25 26>;
             layers = <0>;
         };
 
         plus {
             bindings = <&kp DELETE>;
-            key-positions = <16 17>;
+            key-positions = <31 30>;
             layers = <0>;
         };
 
@@ -114,12 +114,6 @@
             layers = <0>;
         };
 
-        retern {
-            bindings = <&kp RETURN>;
-            key-positions = <15 16>;
-            layers = <0>;
-        };
-
         exam {
             bindings = <&kp EXCL>;
             key-positions = <1 2>;
@@ -128,7 +122,7 @@
 
         backspace {
             bindings = <&kp DELETE>;
-            key-positions = <30 31>;
+            key-positions = <31 32>;
             layers = <0>;
         };
 
