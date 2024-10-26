@@ -74,7 +74,7 @@
 
         and {
             bindings = <&kp PLUS>;
-            key-positions = <19 20>;
+            key-positions = <19 18>;
             layers = <0>;
         };
 
@@ -104,7 +104,7 @@
 
         equal {
             bindings = <&kp EQUAL>;
-            key-positions = <33 34>;
+            key-positions = <33 32>;
             layers = <0>;
         };
 
@@ -121,7 +121,7 @@
         };
 
         backspace {
-            bindings = <&kp DELETE>;
+            bindings = <&kp BACKSPACE>;
             key-positions = <31 32>;
             layers = <0>;
         };
@@ -204,6 +204,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            label = "colmak";
         };
 
         num {
@@ -215,6 +216,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            label = "number";
         };
 
         symbol {
