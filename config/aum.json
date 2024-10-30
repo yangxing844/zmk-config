@@ -73,13 +73,13 @@
       "compatible": "alps,ec11",
       "enabled": false
     },{
-      "ref": "right_encoder",
+      "ref": "left_pana_encoder",
       "name": "encoder_right",
       "identifier": "encoder_right",
       "compatible": "alps,ec11",
       "enabled": false
     },{
-      "ref": "right_encoder",
+      "ref": "right_pana_encoder",
       "name": "encoder_right",
       "identifier": "encoder_right",
       "compatible": "alps,ec11",
