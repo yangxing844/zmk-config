@@ -74,14 +74,14 @@
       "enabled": false
     },{
       "ref": "left_pana_encoder",
-      "name": "encoder_right",
-      "identifier": "encoder_right",
+      "name": "left_pana_encoder",
+      "identifier": "left_pana_encoder",
       "compatible": "alps,ec11",
       "enabled": false
     },{
       "ref": "right_pana_encoder",
-      "name": "encoder_right",
-      "identifier": "encoder_right",
+      "name": "right_pana_encoder",
+      "identifier": "right_pana_encoder",
       "compatible": "alps,ec11",
       "enabled": false
     }
