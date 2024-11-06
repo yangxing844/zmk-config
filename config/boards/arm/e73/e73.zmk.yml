@@ -1,0 +1,9 @@
+file_format: "1"
+id: e73
+name: E73
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/yangxing844
