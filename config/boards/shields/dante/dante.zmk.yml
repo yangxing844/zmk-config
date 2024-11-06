@@ -1,0 +1,15 @@
+file_format: "1"
+id: dante
+name: dante
+type: shield
+url: https://github.com/yangxing844
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+siblings:
+  - dante_left
+  - dante_right

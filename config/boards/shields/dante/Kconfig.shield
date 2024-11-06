@@ -1,0 +1,8 @@
+# Copyright (c) 2020 Ryan Cross
+# SPDX-License-Identifier: MIT
+
+config SHIELD_DANTE_LEFT
+    def_bool $(shields_list_contains,dante_left)
+
+config SHIELD_DANTE_RIGHT
+    def_bool $(shields_list_contains,dante_right)
