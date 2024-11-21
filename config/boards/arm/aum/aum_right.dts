@@ -7,24 +7,6 @@
 		control-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <50>;
 	};
-
-right_pana_encoder: encoder_right_pana {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <30>;
- };
-right_encoder: encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <30>;
- };
-sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&right_encoder &right_pana_encoder>;
-        triggers-per-rotation = <15>;
-    };
 };
 
 &pinctrl {
@@ -102,10 +84,14 @@ nice_view_spi: &spi2 {
 		col-offset=<24>;
 };
 
+&matrix_physical_layout {
+  	kscan = <&kscan0>;
+};
 / {
 	chosen {
+		zephyr,display = &lcd0;
+		zmk,physical-layout=&matrix_physical_layout;
 		zmk,battery =&builtin_battery;
-    zmk,kscan = &kscan0;
 	};
 	kscan0: kscan {
 		
