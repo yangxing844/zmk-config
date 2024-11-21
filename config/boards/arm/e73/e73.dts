@@ -6,6 +6,7 @@
 
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
+#include "arduino_pro_micro_pins.dtsi"
 #include "e73-pinctrl.dtsi"
 
 / {
@@ -19,17 +20,17 @@
         zmk,battery = &builtin_battery;
     };
 
-    leds {
-        compatible = "gpio-leds";
-        blue_led: led_0 {
-            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
-        };
-    };
+    // leds {
+    //     compatible = "gpio-leds";
+    //     blue_led: led_0 {
+    //         gpios = <&gpio0  GPIO_ACTIVE_HIGH>;
+    //     };
+    // };
 
     // Node name must match original "EXT_POWER" label to preserve user settings.
     EXT_POWER {
         compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        control-gpios = <&gpio1 06 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <50>;
     };
 
