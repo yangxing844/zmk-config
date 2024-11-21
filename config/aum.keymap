@@ -1,6 +1,9 @@
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 140
 #include <behaviors.dtsi>
+#include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     combos {
@@ -175,8 +178,15 @@
             tapping-term-ms = <40>;
             flavor = "tap-preferred";
         };
-    };
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        compatible ="zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings=<&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
+        tap-ms = <30>;
+        };
+    };
+     
     macros {
         ceo: ceo {
             compatible = "zmk,behavior-macro";
@@ -203,7 +213,7 @@
                                                                          &kp LGUI           &lt 1 SPACE  &lt 2 ENTER     &kp ENTER     &lt 3 BACKSPACE  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
             label = "colmak";
         };
 
@@ -215,7 +225,7 @@
                                          &trans  &trans     &trans         &trans  &mo 5     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
             label = "number";
         };
 
@@ -236,7 +246,7 @@
                                 &trans  &trans  &trans    &trans       &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
         };
 
         game {
