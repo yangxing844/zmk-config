@@ -218,7 +218,7 @@
 
             sensor-bindings =
                 <&scroll_up_down>,
-                <&inc_dec_kp C D>,
+                <&inc_dec_kp DELETE BACKSPACE>,
                 <&scroll_up_down>,
                 <&inc_dec_kp A B>;
 
