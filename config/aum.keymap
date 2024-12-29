@@ -210,10 +210,10 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&kp TAB           &kp Q            &kp W            &kp F                &kp P              &kp B        &kp LS(LPAR)    &kp LS(RPAR)  &kp J            &kp L              &kp U                 &kp Y             &kp SEMI         &kp BSPC
-&mt LCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp G        &kp LBKT        &kp RBKT      &kp M            &hmr LEFT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr LEFT_GUI O  &kp SQT
-&kp LEFT_SHIFT    &kp Z            &kp X            &kp C                &kp D              &kp V        &kp LS(LBRC)    &kp LS(RBRC)  &kp K            &kp H              &kp COMMA             &kp DOT           &kp FSLH         &kp RSHFT
-                                                                         &kp LGUI           &lt 1 SPACE  &lt 2 ENTER     &kp ENTER     &lt 3 BACKSPACE  &kp RALT
+&kp TAB           &kp Q            &kp W            &kp F                &kp P              &kp B        &kp LC(LG(Q))    &kp LS(RPAR)  &kp J            &kp L              &kp U                 &kp Y             &kp SEMI         &kp BSPC
+&mt LCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp G        &kp LBKT         &kp RBKT      &kp M            &hmr LEFT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr LEFT_GUI O  &kp SQT
+&kp LEFT_SHIFT    &kp Z            &kp X            &kp C                &kp D              &kp V        &kp LS(LBRC)     &kp LS(RBRC)  &kp K            &kp H              &kp COMMA             &kp DOT           &kp FSLH         &kp RSHFT
+                                                                         &kp LGUI           &lt 1 SPACE  &lt 2 ENTER      &kp ENTER     &lt 3 BACKSPACE  &kp RALT
             >;
 
             sensor-bindings =
