@@ -78,7 +78,10 @@ nice_view_spi: &spi2 {
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 		};
 };
-&left_encoder {
+&default_transform {
+	col-offset = <6>;
+};
+&right_encoder {
     status = "okay";
 };
 
@@ -104,12 +107,11 @@ nice_view_spi: &spi2 {
             ;
 
     col-gpios
-        = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+         =  <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-     
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };

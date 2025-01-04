@@ -94,17 +94,24 @@ keys  //                     w   h    x    y     rot   rx   ry
     vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
+	right_encoder: encoder_right {
+					compatible = "alps,ec11";
+					a-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+					b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+					status = "disabled";
+					steps = <30>;
+	 };
+
 left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+        b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
         status = "disabled";
         steps = <30>;
  };
-
 sensors: sensors {
         compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder >;
+        sensors = <&left_encoder &right_encoder >;
         triggers-per-rotation = <15>;
     };
 };
