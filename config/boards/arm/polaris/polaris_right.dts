@@ -1,6 +1,10 @@
 #include "polaris.dtsi"
 #include <dt-bindings/led/led.h>
 
+&default_transform {
+		col-offset=<7>;
+};
+
 / {
 	EXT_POWER {
 		compatible = "zmk,ext-power-generic";
@@ -56,6 +60,22 @@
 };
 
 
+&i2c1 {
+	compatible = "nordic,nrf-twi";
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep"; 
+	
+
+	builtin_battery: max17048@36 {
+		compatible = "zmk,maxim-max17048";
+		status = "okay";
+		reg = <0x36>;
+	};
+
+	status = "okay";
+};
+
 lpm_view_spi: &spi2 {
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi2_default>;
@@ -72,22 +92,6 @@ nice_view_spi: &spi2 {
     cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
-
-&i2c1 {
-	compatible = "nordic,nrf-twi";
-	pinctrl-0 = <&i2c1_default>;
-	pinctrl-1 = <&i2c1_sleep>;
-	pinctrl-names = "default", "sleep"; 
-	
-
-	builtin_battery: max17048@36 {
-		compatible = "zmk,maxim-max17048";
-		status = "okay";
-		reg = <0x36>;
-	};
-
-	status = "okay";
-};
 
 &spi3 {
 	compatible = "nordic,nrf-spim";
@@ -111,7 +115,7 @@ nice_view_spi: &spi2 {
 		};
 };
 
-&left_encoder {
+&right_encoder {
     status = "okay";
 };
 

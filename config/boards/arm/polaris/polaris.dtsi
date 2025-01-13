@@ -11,13 +11,12 @@
 
 / {
     model = "polaris";
-    compatible = "yangxing,polaris";
+    compatible = "lnatkvat,polaris";
 
     chosen {
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
-        zmk,battery = &vbatt;
     };
 
     default_transform: keymap_transform_0 {
@@ -87,9 +86,6 @@ keys  //                     w   h    x    y     rot   rx   ry
     ;
   };
 
-    vbatt: vbatt {
-        compatible = "zmk,battery-nrf-vddh";
-    };
 left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -100,8 +96,8 @@ left_encoder: encoder_left {
 
 right_encoder: encoder_right {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+        b-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
         status = "disabled";
         steps = <30>;
  };
