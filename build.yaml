@@ -1,11 +1,8 @@
 ---
 include:
   - board: aum_left
-    shield: nice_view
+    shield: nice_view_reverse
     snippet: studio-rpc-usb-uart
   - board: aum_right
-    shield: nice_view
-  # - board: corne-v4_left
-  #   snippet: studio-rpc-usb-uart
-  # - board: corne-v4_right
+    shield: nice_view_reverse
 
