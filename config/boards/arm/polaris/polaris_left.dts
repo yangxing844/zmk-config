@@ -1,11 +1,348 @@
+/dts-v1/;
 #include "polaris.dtsi"
+#include <rgb_fx.dtsi>
 #include <dt-bindings/led/led.h>
+#include <dt-bindings/zmk/rgb_fx.h>
+#include "polaris_left_animation_zones.h"
 
 / {
 	EXT_POWER {
 		compatible = "zmk,ext-power-generic";
 		control-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
 		init-delay-ms = <50>;
+	};
+	rgb-fx {
+		compatible = "zmk,rgb-fx";
+		drivers = <&led_strip>;
+		chain-lengths = <35>;
+
+		key-pixels = <>;
+
+		pixels
+			= <&pixel 0 0>
+			, <&pixel 7 0>
+			, <&pixel 14 0>
+			, <&pixel 21 0>
+			, <&pixel 28 0>
+			, <&pixel 35 0>
+			, <&pixel 42 0>
+			, <&pixel 49 0>
+			, <&pixel 56 0>
+			, <&pixel 63 0>
+			, <&pixel 70 0>
+			, <&pixel 77 0>
+			, <&pixel 84 0>
+			, <&pixel 91 0>
+			, <&pixel 98 0>
+			, <&pixel 105 0>
+			, <&pixel 112 0>
+			, <&pixel 119 0>
+			, <&pixel 126 0>
+			, <&pixel 133 0>
+			, <&pixel 140 0>
+			, <&pixel 147 0>
+			, <&pixel 154 0>
+			, <&pixel 161 0>
+			, <&pixel 168 0>
+			, <&pixel 175 0>
+			, <&pixel 182 0>
+			, <&pixel 189 0>
+			, <&pixel 196 0>
+			, <&pixel 203 0>
+			, <&pixel 210 0>
+			, <&pixel 217 0>
+			, <&pixel 224 0>
+			, <&pixel 231 0>
+			, <&pixel 238 0>
+			;
+
+		root_animation: animation_100 {
+			compatible = "zmk,rgb-fx-compose";
+			status = "okay";
+
+			fx = <
+				&main_animations
+				// &bt_indicator_1
+			>;
+		};
+
+		main_animations: animation_0 {
+			compatible = "zmk,rgb-fx-control-group";
+			status = "okay";
+
+			fx = <
+				&blue_sparkle
+				&white_sparkle
+				&red_sparkle
+				&bootloader_all
+				&bootloader_status
+				&layer_indicator
+				&all_indicators
+				&blue_solid
+				&red_solid
+				&white_solid
+				&wpm_indicator
+				&basic_gradient
+				&rgb_static_gradient
+				&hsl_static_gradient
+				&rgb_gradient
+				&wpm_compose
+				&rainbow
+			>;
+		};
+
+		blue_sparkle: animation_1 {
+			compatible = "zmk,rgb-fx-sparkle";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			duration = <10>;
+			colors = <
+				HSL(172, 70, 50)
+				HSL(189, 70, 50)
+			>;
+		};
+
+		white_sparkle: animation_2 {
+			compatible = "zmk,rgb-fx-sparkle";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			duration = <10>;
+			colors = <HSL(0, 50, 100)>;
+		};
+
+		red_sparkle: animation_3 {
+			compatible = "zmk,rgb-fx-sparkle";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			duration = <10>;
+			colors = <
+				HSL(355, 70, 55)
+				HSL(10, 70, 55)
+			>;
+		};
+
+		bootloader_all: animation_4 {
+			compatible = "zmk,rgb-fx-compose";
+			status = "okay";
+
+			fx = <&bootloader_write &bootloader_status>;
+		};
+
+		bootloader_status: animation_5 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <ZONE_INDICATOR_L1>;
+			colors = <HSL(120, 100, 55)>;
+		};
+
+		bootloader_write: animation_6 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <ZONE_INDICATOR_L1_BG>;
+			colors = <HSL(176, 100, 55)>;
+		};
+
+		bt_indicators: animation_7 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <ZONE_INDICATOR_L1 ZONE_INDICATOR_L2 ZONE_INDICATOR_L3>;
+			colors = <HSL(197, 100, 60)>;
+		};
+
+		layer_indicator: animation_8 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <ZONE_INDICATOR_R1>;
+			colors = <HSL(355, 100, 60)>;
+		};
+
+		indicator_bg: animation_9 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <ZONE_INDICATOR_L3_BG ZONE_INDICATOR_R1_BG>;
+			colors = <HSL(0, 0, 0)>;
+		};
+
+		all_indicators: animation_10 {
+			compatible = "zmk,rgb-fx-compose";
+			status = "okay";
+
+			fx = <
+				&white_sparkle
+				&indicator_bg
+				&bt_indicators
+				&layer_indicator
+			>;
+		};
+
+		blue_solid: animation_11 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24>;
+			colors = <HSL(187, 100, 59)>;
+		};
+
+		red_solid: animation_12 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24>;
+			colors = <HSL(354, 100, 59)>;
+		};
+
+		white_solid: animation_13 {
+			compatible = "zmk,rgb-fx-solid";
+			status = "okay";
+
+			pixels = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24>;
+			colors = <HSL(0, 0, 100)>;
+		};
+
+		wpm_indicator: animation_14 {
+			compatible = "zmk,rgb-fx-wpm";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(348, 95, 62) HSL(288, 95, 66)>;
+			bounds = <0 238>;
+			max-wpm = <100>;
+			edge-gradient-width = <50>;
+		};
+
+		basic_gradient: animation_15 {
+			compatible = "zmk,rgb-fx-linear-gradient";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(0, 100, 50) HSL(120, 100, 50) HSL(240, 100, 50)>;
+			gradient-width = <255>;
+			duration = <10>;
+		};
+
+		rgb_static_gradient: animation_16 {
+			compatible = "zmk,rgb-fx-linear-gradient";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(232, 35, 25) HSL(94, 93, 71)>;
+			use-rgb-interpolation;
+		};
+
+		hsl_static_gradient: animation_17 {
+			compatible = "zmk,rgb-fx-linear-gradient";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(232, 35, 25) HSL(94, 93, 71)>;
+		};
+
+		rgb_gradient: animation_18 {
+			compatible = "zmk,rgb-fx-linear-gradient";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(180, 100, 71) HSL(305, 100, 65)>;
+			gradient-width = <150>;
+			duration = <10>;
+			use-rgb-interpolation;
+		};
+
+		// bt_indicator_1: animation_19 {
+		// 	compatible = "zmk,rgb-fx-bt-indicator";
+		// 	status = "okay";
+		//
+		// 	pixels = <ZONE_INDICATOR_L1>;
+		// 	backdrop-pixels = <ZONE_INDICATOR_L1_BG>;
+		//
+		// 	color = <HSL(209, 100, 49)>;
+		// 	// backdrop-color = <HSL(1, 0, 0)>;
+		//
+		// 	profile-index = <0>;
+		// };
+
+		wpm_left: animation_20 {
+			compatible = "zmk,rgb-fx-wpm";
+			status = "okay";
+
+			pixels = <ZONE_STRIP_LEFT ZONE_STRIP_CENTER>;
+			colors = <HSL(205, 100, 60) HSL(320, 100, 50)>;
+			bounds = <84 0>;
+			max-wpm = <100>;
+			blending-mode = "multiply";
+			edge-gradient-width = <30>;
+		};
+
+		wpm_right: animation_21 {
+			compatible = "zmk,rgb-fx-wpm";
+			status = "okay";
+
+			pixels = <ZONE_STRIP_RIGHT>;
+			colors = <HSL(205, 100, 60) HSL(320, 100, 50)>;
+			bounds = <154 238>;
+			max-wpm = <100>;
+			blending-mode = "multiply";
+			edge-gradient-width = <30>;
+		};
+
+		wpm_compose: animation_22 {
+			compatible = "zmk,rgb-fx-compose";
+			status = "okay";
+
+			fx = <&white_sparkle &wpm_left &wpm_right>;
+		};
+
+		rainbow_border: animation_23 {
+			compatible = "zmk,rgb-fx-static";
+			status = "okay";
+
+			pixels = <ZONE_RAINBOW_BORDER>;
+			colors = <
+				HSL(0, 0, 100) HSL(0, 0, 67) HSL(0, 0, 50)
+				HSL(0, 0, 50) HSL(0, 0, 67) HSL(0, 0, 100)
+			>;
+			blending-mode = "multiply";
+		};
+
+		rainbow_colors: animation_24 {
+			compatible = "zmk,rgb-fx-static";
+			status = "okay";
+
+			pixels = <ZONE_RAINBOW>;
+			colors = <
+				HSL(356, 94, 59) HSL(356, 94, 59)
+				HSL(28, 100, 59) HSL(28, 100, 59)
+				HSL(53, 100, 64) HSL(53, 100, 64)
+				HSL(87, 58, 57) HSL(87, 58, 57)
+				HSL(201, 85, 48) HSL(201, 85, 48)
+				HSL(275, 63, 51) HSL(275, 63, 51)
+			>;
+		};
+
+		rainbow_background: animation_25 {
+			compatible = "zmk,rgb-fx-linear-gradient";
+			status = "okay";
+
+			pixels = <ZONE_STRIP>;
+			colors = <HSL(220, 20, 30) HSL(223, 30, 80)>;
+			gradient-width = <90>;
+			duration = <8>;
+		};
+
+		rainbow: animation_26 {
+			compatible = "zmk,rgb-fx-compose";
+			status = "okay";
+
+			fx = <&rainbow_background &rainbow_border &rainbow_colors>;
+		};
 	};
 };
 
@@ -103,7 +440,7 @@ nice_view_spi: &spi2 {
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <24>; /* arbitrary; change at will */
+        chain-length = <32>; /* arbitrary; change at will */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
@@ -122,7 +459,7 @@ nice_view_spi: &spi2 {
 / {
 	chosen {
 		zmk,physical-layout = &matrix_physical_layout;
-    zmk,underglow = &led_strip;
+		zmk,rgb_fx = &root_animation;
 		zmk,battery =&builtin_battery;
 	};
     kscan0: kscan {

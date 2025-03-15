@@ -2,7 +2,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb_fx.h>
+#include <dt-bindings/zmk/outputs.h>
 
 
 / {
@@ -12,7 +13,7 @@
 
 		default_layer {
 			bindings = <
-				&ext_power EP_TOG   &kp Q    &kp W    &kp E     &kp R     &kp T      &kp SPACE        &kp SPACE &kp Y     &kp U     &kp I     &kp O     &kp P    &ext_power EP_TOG
+			 &rgbfx RGBFX_TOGGLE(0) &rgbfx RGBFX_NEXT(0) &rgbfx RGBFX_PREVIOUS(0)   &kp E     &kp R     &kp T      &kp SPACE        &kp SPACE &kp Y     &kp U     &kp I     &kp O     &kp P    &ext_power EP_TOG
 				&kp A    &kp A    &kp S    &kp D     &kp F     &kp G      &kp LC(C)        &kp RET   &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
 				&kp A &kp Z    &kp X    &kp C     &kp V     &kp B      &studio_unlock       &kp LC(V) &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RCTRL
 				                                &kp LGUI      &kp LGUI  &kp DEL    &kp RET          &kp TAB   &kp BSPC  &kp RALT &kp RALT
