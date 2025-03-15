@@ -17,7 +17,6 @@
 		;
 };
 
-/{
-	trackball: virtual_input {
-		compatible = "zmk,virtual-input";
-	};};
+&pmw_listener {
+	status = "okay";
+};
