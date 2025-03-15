@@ -40,7 +40,7 @@
 
  matrix_physical_layout: matrix_physical_layout {
  	 compatible = "zmk,physical-layout";
- 	 display-name = "direct wiring";
+ 	 display-name = "PLANCKEYS default";
  	
 	 transform = <&default_transform>;
  keys  //                     w   h    x    y     rot    rx    ry
@@ -102,13 +102,13 @@
 					steps = <30>;
 	 };
 
-left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-        b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
-        status = "disabled";
-        steps = <30>;
- };
+	left_encoder: encoder_left {
+					compatible = "alps,ec11";
+					a-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+					b-gpios = <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+					status = "disabled";
+					steps = <30>;
+	 };
 sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder >;
