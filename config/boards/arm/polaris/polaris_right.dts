@@ -2,57 +2,52 @@
 #include <dt-bindings/led/led.h>
 
 &default_transform {
-		col-offset=<7>;
+		col-offset=<25>;
 };
 
 / {
-	EXT_POWER {
-		compatible = "zmk,ext-power-generic";
-		control-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
-		init-delay-ms = <50>;
-	};
 };
 
 &pinctrl {
     spi2_default: spi2_default {
 				group1 {
 						psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>,
-						<NRF_PSEL(SPIM_SCK, 0, 4)>;
+						<NRF_PSEL(SPIM_SCK, 0, 27)>;
 				};
 		};
 	
     spi2_sleep: spi2_sleep {
 				group1 {
 						psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>,
-						<NRF_PSEL(SPIM_SCK, 0, 4)>;
+						<NRF_PSEL(SPIM_SCK, 0, 27)>;
 						low-power-enable;
 				};
 		};
 
     spi3_default: spi3_default {
 				group1 {
-						psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>;
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 15)>;
 				};
 		};
 	
     spi3_sleep: spi3_sleep {
 				group1 {
-						psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>;
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 15)>;
 						low-power-enable;
 				};
 		};
     i2c1_default: i2c1_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,
-                <NRF_PSEL(TWIM_SCL, 0, 10)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+                <NRF_PSEL(TWIM_SCL, 1, 9)>;
 						bias-pull-up;
         };
     };
 
     i2c1_sleep: i2c1_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 9)>,
-                <NRF_PSEL(TWIM_SCL, 0, 10)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+                <NRF_PSEL(TWIM_SCL, 1, 9)>;
             low-power-enable;
 						bias-pull-up;
         };
@@ -60,28 +55,13 @@
 };
 
 
-&i2c1 {
-	compatible = "nordic,nrf-twi";
-	pinctrl-0 = <&i2c1_default>;
-	pinctrl-1 = <&i2c1_sleep>;
-	pinctrl-names = "default", "sleep"; 
-	
-
-	builtin_battery: max17048@36 {
-		compatible = "zmk,maxim-max17048";
-		status = "okay";
-		reg = <0x36>;
-	};
-
-	status = "okay";
-};
 
 lpm_view_spi: &spi2 {
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+    cs-gpios = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
 nice_view_spi: &spi2 {
@@ -89,7 +69,7 @@ nice_view_spi: &spi2 {
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+    cs-gpios = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
 
@@ -107,7 +87,7 @@ nice_view_spi: &spi2 {
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <32>; /* arbitrary; change at will */
+        chain-length = <25>; /* arbitrary; change at will */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
@@ -119,35 +99,48 @@ nice_view_spi: &spi2 {
     status = "okay";
 };
 
-&matrix_physical_layout {
+&physical_layout0 {
   	kscan = <&kscan0>;
 };
 
 / {
 	chosen {
-		zmk,physical-layout = &matrix_physical_layout;
+		zmk,physical-layout = &physical_layout0;
     zmk,underglow = &led_strip;
-		zmk,battery =&builtin_battery;
+		zmk,battery =&vbatt;
 	};
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
     kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        wakeup-source;
-
-        diode-direction = "col2row";
-        row-gpios
-            = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
-
-    col-gpios
-        = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		compatible = "zmk,kscan-gpio-direct";
+		wakeup-source;
+		input-gpios
+			= <&gpio1  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //19
+			, <&gpio1	 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //18
+			, <&gpio1	 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //13
+			, <&gpio1  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //12
+			, <&gpio1  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //5
+			, <&gpio0  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //4
+			, <&gpio0  10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex1
+			, <&gpio1	 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //20
+			, <&gpio1  11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //17
+			, <&gpio1  14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //14
+			, <&gpio1  10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //11
+			, <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //6
+			, <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //3
+			, <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex2
+			, <&gpio0 29  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //21
+			, <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //16
+			, <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //15
+			, <&gpio0 28 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //10
+			, <&gpio0 30 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  //7
+			, <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //2
+			, <&gpio0 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //ex3
+			, <&gpio0 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 9
+			, <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // 8
+			 ,<&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //1
+			 ,<&gpio0 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> //1
+		;
     };
 };
