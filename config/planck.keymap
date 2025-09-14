@@ -20,7 +20,7 @@
             //                               |   GUI   |   DEL   | RETURN  |  SPACE  | ESCAPE  |  |  RETURN |  SPACE  |   TAB   |   BSPC  |  R ALT  |
 
             bindings = <
-&ext_power EP_TOG  &kp Q  &kp W     &kp E     &kp R    &kp T    &kp Y    &kp U     &kp I      &kp O     &kp P     &ext_power EP_TOG
+&kp TAB &kp Q  &kp W     &kp E     &kp R    &kp T    &kp Y    &kp U     &kp I      &kp O     &kp P     &ext_power EP_TOG
 &kp A              &kp A  &kp S     &kp D     &kp F    &kp G    &kp H    &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
 &kp A              &kp Z  &kp X     &kp C     &kp V    &kp B    &kp C    &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RCTRL
                           &kp LGUI  &kp LGUI  &kp DEL  &kp RET  &kp TAB  &kp BSPC  &kp RALT   &kp LGUI

@@ -3,6 +3,7 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+
 if BOARD_POLARIS_LEFT
 
 config ZMK_KEYBOARD_NAME
@@ -13,9 +14,6 @@ config ZMK_SPLIT_ROLE_CENTRAL
 endif 
 
 if BOARD_POLARIS_LEFT || BOARD_POLARIS_RIGHT
-#
-# config BOARD
-# 		default "AU"
 
 config ZMK_SPLIT
 		default y

@@ -213,7 +213,7 @@
 &kp TAB           &kp Q            &kp W            &kp F                &kp P              &kp B        &kp LC(LG(Q))    &kp LS(RPAR)  &kp J            &kp L              &kp U                 &kp Y             &kp SEMI         &kp BSPC
 &mt LCTRL ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT R  &hml LEFT_CONTROL S  &hml LEFT_SHIFT T  &kp G        &kp LBKT         &kp RBKT      &kp M            &hmr LEFT_SHIFT N  &hmr RIGHT_CONTROL E  &hmr RIGHT_ALT I  &hmr LEFT_GUI O  &kp SQT
 &kp LEFT_SHIFT    &kp Z            &kp X            &kp C                &kp D              &kp V        &kp LS(LBRC)     &kp LS(RBRC)  &kp K            &kp H              &kp COMMA             &kp DOT           &kp FSLH         &kp RSHFT
-                                                                         &kp LGUI           &lt 1 SPACE  &lt 2 ENTER      &kp ENTER     &lt 3 BACKSPACE  &kp RALT
+                                                                        &none &kp LGUI           &lt 1 SPACE  &lt 2 ENTER      &kp ENTER     &lt 3 BACKSPACE  &kp RALT &none
             >;
 
             sensor-bindings =
@@ -227,7 +227,7 @@
 
         num {
             bindings = <
-&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS   &trans         &trans  &trans    &trans    &trans        &trans     &trans  &trans
+&trans  &kp KP_MULTIPLY  &kp N7  &kp N8  &kp N9  &kp PLUS   &rgb_ug 1         &trans  &trans    &trans    &trans        &trans     &trans  &trans
 &trans  &kp KP_DIVIDE    &kp N4  &kp N5  &kp N6  &kp MINUS  &trans         &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &trans  &kp DOT          &kp N1  &kp N2  &kp N3  &kp N0     &bootloader    &trans  &trans    &trans    &trans        &trans     &trans  &trans
                                          &trans  &trans     &trans         &trans  &mo 5     &trans
