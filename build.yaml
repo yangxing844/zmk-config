@@ -1,8 +1,8 @@
 ---
 include:
-  - board: aum_left
+  - board: polaris_left
     shield: nice_view_reverse
     snippet: studio-rpc-usb-uart
-  - board: aum_right
+  - board: polaris_right
     shield: nice_view_reverse
 
