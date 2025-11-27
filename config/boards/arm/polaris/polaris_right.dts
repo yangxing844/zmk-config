@@ -9,36 +9,36 @@
 };
 
 &pinctrl {
-    spi2_default: spi2_default {
+ spi2_default: spi2_default {
 				group1 {
 						psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>,
-						<NRF_PSEL(SPIM_SCK, 0, 27)>;
+						<NRF_PSEL(SPIM_SCK, 0, 4)>;
 				};
 		};
 	
     spi2_sleep: spi2_sleep {
 				group1 {
 						psels = <NRF_PSEL(SPIM_MOSI, 0, 26)>,
-						<NRF_PSEL(SPIM_SCK, 0, 27)>;
+						<NRF_PSEL(SPIM_SCK, 0, 4)>;
 						low-power-enable;
 				};
 		};
 
     spi3_default: spi3_default {
 				group1 {
-						psels = <NRF_PSEL(SPIM_MOSI, 0, 15)>;
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
 				};
 		};
 	
     spi3_sleep: spi3_sleep {
 				group1 {
-						psels = <NRF_PSEL(SPIM_MOSI, 0, 15)>;
+						psels = <NRF_PSEL(SPIM_MOSI, 0, 27)>;
 						low-power-enable;
 				};
 		};
     i2c1_default: i2c1_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+            psels = <NRF_PSEL(TWIM_SDA, 0, 13)>,
                 <NRF_PSEL(TWIM_SCL, 1, 9)>;
 						bias-pull-up;
         };
@@ -46,7 +46,7 @@
 
     i2c1_sleep: i2c1_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 12)>,
+            psels = <NRF_PSEL(TWIM_SDA, 0, 13)>,
                 <NRF_PSEL(TWIM_SCL, 1, 9)>;
             low-power-enable;
 						bias-pull-up;
@@ -61,7 +61,7 @@ lpm_view_spi: &spi2 {
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
 nice_view_spi: &spi2 {
@@ -69,7 +69,7 @@ nice_view_spi: &spi2 {
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
+    cs-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;
 };
 
 
