@@ -239,10 +239,10 @@
 
         symbol {
             bindings = <
-&trans  &trans  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                             &trans         &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &trans  &trans    &trans  &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &trans  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &trans  &trans    &trans  &trans          &trans          &trans        &trans           &trans  &trans
+                                             &trans         &trans  &trans    &trans  &trans          &trans
             >;
         };
 
