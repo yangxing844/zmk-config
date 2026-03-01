@@ -269,10 +269,10 @@
 
         layer_5 {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans  &to 4   &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans      &trans        &trans  &to 0   &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &trans  &bootloader  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans  &to 4        &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans  &to 0        &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans       &trans  &trans  &trans      &trans  &trans  &trans  &trans
             >;
         };
     };
