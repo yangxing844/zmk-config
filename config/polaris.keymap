@@ -221,7 +221,7 @@
                 <&scroll_up_down>,
                 <&inc_dec_kp LEFT RIGHT>,
                 <&scroll_up_down>,
-                <&inc_dec_kp A B>;
+                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
 
             label = "colmak";
         };
@@ -260,10 +260,10 @@
 
         game {
             bindings = <
-&kp TAB    &ceo    &kp Q  &kp W   &kp E   &kp R   &kp T          &kp Y  &kp U   &kp I      &kp O    &kp P     &trans    &trans
+&kp TAB    &kp N1  &kp Q  &kp W   &kp E   &kp R   &kp T          &kp Y  &kp U   &kp I      &kp O    &kp P     &trans    &trans
 &kp ESC    &kp N2  &kp A  &kp S   &kp D   &kp F   &kp G          &kp H  &kp J   &kp K      &kp L    &kp SEMI  &kp APOS  &trans
 &kp LSHFT  &kp N3  &kp Z  &kp X   &kp C   &kp V   &kp B          &kp N  &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans    &trans
-                          &trans  &trans  &trans  &kp SPACE      &mo 1  &trans  &trans     &trans
+                          &trans  &trans  &trans  &kp SPACE      &mo 1  &trans  &mo 5      &trans
             >;
         };
 
