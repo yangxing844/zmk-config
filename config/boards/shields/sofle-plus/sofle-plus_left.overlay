@@ -22,3 +22,39 @@
     status = "okay";
 };
 
+&pro_micro_i2c {
+	status = "okay";
+	clock-frequency = <400000>; 
+	tps43: iqs5xx@74 {
+		status = "okay";
+		compatible = "azoteq,iqs5xx";
+		reg = <0x74>;
+
+		reset-gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+		rdy-gpios = <&gpio0 8 GPIO_ACTIVE_HIGH>;
+
+		/*
+		* Potentially non-exhaustive list of configuration options.
+		* See: dts/bindings/input/azoteq,iqs5xx-common.yaml for a full list.
+		*/
+		one-finger-tap;
+		press-and-hold;
+		press-and-hold-time = <250>;
+		two-finger-tap;
+
+		scroll;
+		natural-scroll-y;
+		natural-scroll-x;
+
+		// If the beta is small, the filtering is stronger, and if the beta is larger, the filtering is weaker.
+		bottom-beta = <5>;
+		stationary-threshold = <5>;
+
+		switch-xy;
+	};
+};
+
+&tps43_input {
+	 device= <&tps43>;
+};
+

@@ -218,11 +218,8 @@
             >;
 
             sensor-bindings =
-                <&scroll_up_down>,
                 <&inc_dec_kp LEFT RIGHT>,
-                <&scroll_up_down>,
                 <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-
             label = "colmak";
         };
 
@@ -234,7 +231,9 @@
                                  &trans  &trans  &trans     &trans               &trans  &trans          &mo 5           &trans
             >;
 
-            sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
+            sensor-bindings =
+                <&inc_dec_kp LEFT RIGHT>,
+                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             label = "number";
         };
 
@@ -255,14 +254,13 @@
                         &trans  &trans  &trans  &trans      &trans       &trans    &trans        &trans
             >;
 
-            sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
         };
 
         game {
             bindings = <
-&kp TAB    &kp N1  &kp Q  &kp W   &kp E   &kp R   &kp T          &kp Y  &kp U   &kp I      &kp O    &kp P     &trans    &trans
-&kp ESC    &kp N2  &kp A  &kp S   &kp D   &kp F   &kp G          &kp H  &kp J   &kp K      &kp L    &kp SEMI  &kp APOS  &trans
-&kp LSHFT  &kp N3  &kp Z  &kp X   &kp C   &kp V   &kp B          &kp N  &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans    &trans
+&kp N1    &kp TAB  &kp Q  &kp W   &kp E   &kp R   &kp T          &kp Y  &kp U   &kp I      &kp O    &kp P     &trans    &trans
+&kp N2    &kp ESC  &kp A  &kp S   &kp D   &kp F   &kp G          &kp H  &kp J   &kp K      &kp L    &kp SEMI  &kp APOS  &trans
+&kp N3  &kp LSHFT  &kp Z  &kp X   &kp C   &kp V   &kp B          &kp N  &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans    &trans
                           &trans  &trans  &trans  &kp SPACE      &mo 1  &trans  &mo 5      &trans
             >;
         };
