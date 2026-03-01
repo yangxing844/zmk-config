@@ -1,0 +1,9 @@
+boards:
+  - name: polaris_left
+    vendor: modifier_key
+    socs:
+      - name: nrf52840
+  - name: polaris_right
+    vendor: modifier_key
+    socs:
+      - name: nrf52840
