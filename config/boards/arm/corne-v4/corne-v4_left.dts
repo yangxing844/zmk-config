@@ -117,11 +117,23 @@ nice_view_spi:&spi2 {
 // &left_encoder {
 //     status = "okay";
 // };
+&matrix_physical_layout {
+	kscan = <&kscan0>;
+};
+
+&zephyr_udc0 {
+	snippet_studio_rpc_usb_uart: snippet_studio_rpc_usb_uart {
+		compatible = "zephyr,cdc-acm-uart";
+	};
+};
+
 / {
 	chosen {
 		zmk,underglow = &led_strip;
 		zmk,battery = &builtin_battery;
-		zmk,kscan= &kscan0;
+		zmk,kscan = &kscan0;
+		zmk,physical-layout = &matrix_physical_layout;
+		zmk,studio-rpc-uart = &snippet_studio_rpc_usb_uart;
 	};
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";

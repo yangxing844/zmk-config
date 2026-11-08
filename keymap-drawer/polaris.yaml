@@ -1,0 +1,373 @@
+layout: {zmk_keyboard: polaris}
+layers:
+  colmak:
+  - TAB
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - Ctl+Gui+E
+  - Sft+)
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - BSPC
+  - {t: ESCAPE, h: LCTRL}
+  - {t: A, h: LEFT GUI}
+  - {t: R, h: LEFT ALT}
+  - {t: S, h: LEFT CONTROL}
+  - {t: T, h: LEFT SHIFT}
+  - G
+  - '['
+  - ']'
+  - M
+  - {t: N, h: LEFT SHIFT}
+  - {t: E, h: RIGHT CONTROL}
+  - {t: I, h: RIGHT ALT}
+  - {t: O, h: LEFT GUI}
+  - ''''
+  - LEFT SHIFT
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - Sft+{
+  - Sft+}
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - RSHFT
+  - '&mkp MCLK'
+  - LGUI
+  - {t: SPACE, h: number}
+  - {t: ENTER, h: symbol}
+  - ENTER
+  - {t: BACKSPACE, h: fuction}
+  - RALT
+  - ''
+  number:
+  - {t: ▽, type: trans}
+  - KP MULTIPLY
+  - '7'
+  - '8'
+  - '9'
+  - +
+  - RGB TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - KP DIVIDE
+  - '4'
+  - '5'
+  - '6'
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '5'
+  - {t: ▽, type: trans}
+  symbol:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+&
+  - Sft+*
+  - Sft+(
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+$
+  - Sft+%
+  - Sft+^
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+!
+  - Sft+@
+  - Sft+#
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  fuction:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F4
+  - F5
+  - F6
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - UP ARROW
+  - DOWN
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  game:
+  - '1'
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '2'
+  - ESC
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - {t: ▽, type: trans}
+  - '3'
+  - LSHFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - SPACE
+  - number
+  - {t: ▽, type: trans}
+  - '5'
+  - {t: ▽, type: trans}
+  '5':
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: game, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: colmak, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+combos:
+- p: [18, 17]
+  k: (
+  l: [colmak]
+- p: [23, 24]
+  k: )
+  l: [colmak]
+- p: [16, 17]
+  k: '['
+  l: [colmak]
+- p: [24, 25]
+  k: ']'
+  l: [colmak]
+- p: [15, 16]
+  k: '{'
+  l: [colmak]
+- p: [25, 26]
+  k: '}'
+  l: [colmak]
+- p: [31, 30]
+  k: DELETE
+  l: [colmak]
+- p: [22, 23]
+  k: '-'
+  l: [colmak]
+- p: [7, 8]
+  k: ^
+  l: [colmak]
+- p: [36, 37]
+  k: _
+  l: [colmak]
+- p: [9, 10]
+  k: '|'
+  l: [colmak]
+- p: [19, 18]
+  k: +
+  l: [colmak]
+- p: [2, 3]
+  k: '@'
+  l: [colmak]
+- p: [0, 1]
+  k: '`'
+  l: [colmak]
+- p: [3, 2]
+  k: '#'
+  l: [colmak]
+- p: [4, 3]
+  k: '~'
+  l: [colmak]
+- p: [33, 32]
+  k: '='
+  l: [colmak]
+- p: [6, 7]
+  k: '%'
+  l: [colmak]
+- p: [1, 2]
+  k: '!'
+  l: [colmak]
+- p: [31, 32]
+  k: BACKSPACE
+  l: [colmak]
+- p: [39, 40]
+  k: '5'
+- p: [37, 38]
+  k: {t: '5', h: sticky}

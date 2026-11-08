@@ -1,3 +1,4 @@
+#define ZMK_BEHAVIORS_KEEP_ALL
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>

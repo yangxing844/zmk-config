@@ -10,9 +10,6 @@ endif
 
 if BOARD_AUM_LEFT || BOARD_AUM_RIGHT
 
-config BOARD
-		default "AUM"
-
 config ZMK_SPLIT
 		default y
 

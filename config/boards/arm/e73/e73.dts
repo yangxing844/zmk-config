@@ -18,6 +18,7 @@
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
         zmk,battery = &builtin_battery;
+        zmk,studio-rpc-uart = &snippet_studio_rpc_usb_uart;
     };
 
     // leds {
@@ -98,6 +99,9 @@
 
 zephyr_udc0:&usbd {
 		status = "okay";
+		snippet_studio_rpc_usb_uart: snippet_studio_rpc_usb_uart {
+			compatible = "zephyr,cdc-acm-uart";
+		};
 };
 
 &flash0 {

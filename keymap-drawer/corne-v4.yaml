@@ -1,0 +1,443 @@
+layout: {zmk_keyboard: corne-v4}
+layers:
+  colemak-dh:
+  - TAB
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - '-'
+  - '|'
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - \
+  - {t: ESCAPE, h: RCTRL}
+  - {t: A, h: LEFT GUI}
+  - {t: R, h: LEFT ALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LEFT SHIFT}
+  - G
+  - '['
+  - ']'
+  - M
+  - {t: N, h: RIGHT SHIFT}
+  - {t: E, h: RIGHT CONTROL}
+  - {t: I, h: RIGHT ALT}
+  - {t: O, h: RGUI}
+  - ''''
+  - LSHFT
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - (
+  - )
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: switch, h: sticky}
+  - LCMD
+  - {t: SPACE, h: symbol}
+  - {t: LEFT SHIFT, h: number}
+  - {t: ENTER, h: fun}
+  - {t: BACKSPACE, h: switch}
+  - {t: DELETE, h: fun}
+  colemak-dh_without_hrm:
+  - TAB
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - J
+  - L
+  - U
+  - Y
+  - ;
+  - BSPC
+  - {t: ▽, type: trans}
+  - A
+  - R
+  - S
+  - T
+  - G
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - M
+  - N
+  - E
+  - I
+  - O
+  - ''''
+  - {t: ▽, type: trans}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - K
+  - H
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  qwerty:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - S
+  - D
+  - F
+  - G
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - N
+  - M
+  - ','
+  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  symbol:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+&
+  - Sft+*
+  - LSHFT
+  - LSHFT
+  - '9'
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+$
+  - Sft+%
+  - Sft+^
+  - '~'
+  - '6'
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+!
+  - Sft+@
+  - Sft+#
+  - '`'
+  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  game:
+  - TAB
+  - '1'
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - J
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: ▽, type: trans}
+  - {t: ESCAPE, h: RCTRL}
+  - '2'
+  - A
+  - S
+  - D
+  - F
+  - G
+  - M
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - {t: ▽, type: trans}
+  - LSHFT
+  - '3'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - K
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - .
+  - C
+  - SPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  number:
+  - {t: ▽, type: trans}
+  - Sft++
+  - '7'
+  - '8'
+  - '9'
+  - ''
+  - LEFT ARROW
+  - J
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - KP MULTIPLY
+  - BSPC
+  - {t: ▽, type: trans}
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - '='
+  - M
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - {t: ▽, type: trans}
+  - ''
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - .
+  - RIGHT
+  - K
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - {type: held}
+  - RET
+  - fun
+  - {t: ▽, type: trans}
+  fun:
+  - ''
+  - F12
+  - F7
+  - F8
+  - F9
+  - PRINTSCREEN
+  - B
+  - J
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - SCROLLLOCK
+  - G
+  - M
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - F10
+  - F1
+  - F2
+  - F3
+  - PAUSE BREAK
+  - V
+  - K
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - {t: ▽, type: trans}
+  - ''
+  switch:
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - ''
+  - J
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: game, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - EP TOG
+  - M
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: colemak-dh, h: toggle}
+  - {t: colemak-dh_without_hrm, h: toggle}
+  - {t: qwerty, h: toggle}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [19, 20]
+  k: (
+- p: [21, 20]
+  k: )
+- p: [31, 32]
+  k: '['
+- p: [32, 33]
+  k: ']'
+- p: [31, 32]
+  k: '{'
+- p: [32, 33]
+  k: '}'
+- p: [16, 17]
+  k: +
+- p: [19, 18]
+  k: '-'
+- p: [7, 8]
+  k: ^
+- p: [30, 31]
+  k: _
+- p: [9, 10]
+  k: KP ASTERISK
+- p: [21, 22]
+  k: '|'
+- p: [9, 8]
+  k: '&'
+- p: [2, 3]
+  k: '@'
+- p: [0, 1]
+  k: '`'
+- p: [37, 38]
+  k: ENTER
+- p: [3, 4]
+  k: '#'
+- p: [4, 5]
+  k: '~'
+- p: [28, 29]
+  k: '='
+- p: [6, 7]
+  k: '%'
+- p: [15, 16]
+  k: $
+- p: [1, 2]
+  k: '!'
+- p: [43, 44]
+  k: switch
+- p: [45, 46]
+  k: switch

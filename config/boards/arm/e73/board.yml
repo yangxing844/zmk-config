@@ -1,0 +1,5 @@
+board:
+  name: e73
+  vendor: modifier_key
+  socs:
+    - name: nrf52840

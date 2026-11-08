@@ -1,0 +1,9 @@
+boards:
+  - name: corne-v4_left
+    vendor: modifier_key
+    socs:
+      - name: nrf52840
+  - name: corne-v4_right
+    vendor: modifier_key
+    socs:
+      - name: nrf52840

@@ -3,12 +3,6 @@
 # SPDX-License-Identifier: MIT
 #
 
-config BOARD_AUM_LEFT
-    bool
-config BOARD_AUM_RIGHT
-    bool 
-
-
 config BOARD_ENABLE_DCDC
     bool "Enable DCDC mode"
     select SOC_DCDC_NRF52X

@@ -101,9 +101,16 @@ nice_view_spi: &spi2 {
   	kscan = <&kscan0>;
 };
 
+&zephyr_udc0 {
+	snippet_studio_rpc_usb_uart: snippet_studio_rpc_usb_uart {
+		compatible = "zephyr,cdc-acm-uart";
+	};
+};
+
 / {
 	chosen {
 		zmk,physical-layout = &physical_layout0;
+		zmk,studio-rpc-uart = &snippet_studio_rpc_usb_uart;
     zmk,underglow = &led_strip;
 		zmk,battery =&vbatt;
 	};

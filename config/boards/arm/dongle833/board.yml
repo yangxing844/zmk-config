@@ -1,0 +1,5 @@
+board:
+  name: dongle_833
+  vendor: modifier_key
+  socs:
+    - name: nrf52833

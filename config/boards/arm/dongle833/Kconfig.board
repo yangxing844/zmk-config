@@ -1,8 +1,0 @@
-# mikoto board configuration
-
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config BOARD_DONGLE_833
-    bool "dongle 833"
-    depends on SOC_NRF52833_QIAA

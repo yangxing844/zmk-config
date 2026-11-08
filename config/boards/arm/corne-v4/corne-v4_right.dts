@@ -127,11 +127,16 @@ nice_view_spi: &spi2 {
 		col-offset=<24>;
 };
 
+&matrix_physical_layout {
+	kscan = <&kscan0>;
+};
+
 / {
 	chosen {
 		zmk,underglow = &led_strip;
 		zmk,battery = &builtin_battery;
-		zmk,kscan= &kscan0;
+		zmk,kscan = &kscan0;
+		zmk,physical-layout = &matrix_physical_layout;
 	};
 	kscan0: kscan {
 		

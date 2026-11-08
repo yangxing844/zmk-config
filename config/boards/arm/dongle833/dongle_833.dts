@@ -40,6 +40,7 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+        zmk,studio-rpc-uart = &snippet_studio_rpc_usb_uart;
     };
 
 };
@@ -70,6 +71,9 @@
 
 zephyr_udc0: &usbd {
     status = "okay";
+    snippet_studio_rpc_usb_uart: snippet_studio_rpc_usb_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
 };
 
 &flash0 {

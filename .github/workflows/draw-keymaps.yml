@@ -1,0 +1,51 @@
+name: Draw Keymaps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master, main]
+    paths:
+      - 'config/*.keymap'
+      - 'config/*.json'
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer
+
+      - name: Generate keymap diagrams
+        run: |
+          mkdir -p keymap-drawer
+          for keymap_file in config/*.keymap; do
+            name=$(basename "$keymap_file" .keymap)
+            echo "Drawing ${name}..."
+            keymap parse -z "$keymap_file" > "keymap-drawer/${name}.yaml"
+            if [ -f "config/${name}.json" ]; then
+              keymap draw -j "config/${name}.json" "keymap-drawer/${name}.yaml" > "keymap-drawer/${name}.svg"
+            else
+              keymap draw "keymap-drawer/${name}.yaml" > "keymap-drawer/${name}.svg"
+            fi
+          done
+
+      - name: Commit and push updated diagrams
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keymap-drawer/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update keymap diagrams [skip ci]"
+            git push
+          fi

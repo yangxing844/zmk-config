@@ -1,3 +1,4 @@
+#define ZMK_BEHAVIORS_KEEP_ALL
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 140
 
 #include <behaviors/mouse_keys.dtsi>
@@ -132,12 +133,12 @@
         };
 
         switch {
-            bindings = <&mo 8>;
+            bindings = <&mo 5>;
             key-positions = <39 40>;
         };
 
         reverse {
-            bindings = <&sl 10>;
+            bindings = <&sl 5>;
             key-positions = <37 38>;
         };
     };
@@ -222,7 +223,7 @@
                 <&scroll_up_down>,
                 <&inc_dec_kp A B>;
 
-            label = "colmak";
+            display-name = "colmak";
         };
 
         num {
@@ -234,7 +235,7 @@
             >;
 
             sensor-bindings = <&scroll_up_down &scroll_up_down &scroll_up_down &scroll_up_down >;
-            label = "number";
+            display-name = "number";
         };
 
         symbol {

@@ -5,10 +5,6 @@
 
 if BOARD_DONGLE_833
 
-config BOARD
-    default "dongle 833"
-
-
 if USB_DEVICE_STACK 
 
 config USB_NRFX

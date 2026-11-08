@@ -1,0 +1,9 @@
+boards:
+  - name: aum_left
+    vendor: modifier_key
+    socs:
+      - name: nrf52840
+  - name: aum_right
+    vendor: modifier_key
+    socs:
+      - name: nrf52840

@@ -1,6 +1,13 @@
 ---
 include:
   - board: planck_left
-    snippet: nrf52840-nosd
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: planck_right
-
+  - board: planck_left
+    snippet: nrf52840-nosd
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: planck_left_nosd
+  - board: planck_right
+    snippet: nrf52840-nosd
+    artifact-name: planck_right_nosd
