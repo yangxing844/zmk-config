@@ -1,4 +1,6 @@
+#ifndef ZMK_BEHAVIORS_KEEP_ALL
 #define ZMK_BEHAVIORS_KEEP_ALL
+#endif
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>

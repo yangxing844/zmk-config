@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: MIT
+
+if BOARD_DONGLE_833
+
+if USB
+
+config USB_DEVICE_STACK
+    default y
+
+endif # USB
+
+endif # BOARD_DONGLE_833

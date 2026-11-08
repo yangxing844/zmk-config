@@ -1,9 +1,10 @@
+#ifndef ZMK_BEHAVIORS_KEEP_ALL
 #define ZMK_BEHAVIORS_KEEP_ALL
-#include <behaviors/mouse_keys.dtsi>
+#endif
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &lt {
     tapping-term-ms = <300>;
@@ -150,7 +151,6 @@
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "homewrow_mods_left";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -164,7 +164,6 @@
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -178,7 +177,6 @@
 
         tap_preferred: tap_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_PREFERRED";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -254,7 +252,7 @@
                                  &trans  &none   &trans       &trans  &trans
             >;
 
-            label = "num";
+            display-name = "num";
         };
 
         fun {
@@ -274,7 +272,7 @@
                                         &trans        &trans        &trans          &trans  &trans
             >;
 
-            label = "switch";
+            display-name = "switch";
         };
 
         reverse {

@@ -1,8 +1,8 @@
+#ifndef ZMK_BEHAVIORS_KEEP_ALL
 #define ZMK_BEHAVIORS_KEEP_ALL
+#endif
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 140
 
-#include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -147,7 +147,6 @@
     behaviors {
         hml: homewrow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "homewrow_mods_left";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -161,7 +160,6 @@
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -175,7 +173,6 @@
 
         tap_preferred: tap_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_PREFERRED";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -197,7 +194,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp M &kp ENTER &kp DOWN &kp DOWN &kp DOWN &kp DOWN &kp ENTER &kp DOWN &kp ENTER>;
-            label = "CEO";
         };
     };
 

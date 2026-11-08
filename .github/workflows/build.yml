@@ -4,9 +4,10 @@ on:
   push:
     paths:
       - config/**
+      - boards/**
+      - zephyr/**
       - build.yaml
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-  

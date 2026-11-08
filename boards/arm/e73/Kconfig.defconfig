@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: MIT
+
+if BOARD_E73
+
+if USB
+
+config USB_DEVICE_STACK
+    default y
+
+endif # USB
+
+config I2C
+    default y
+
+endif # BOARD_E73
