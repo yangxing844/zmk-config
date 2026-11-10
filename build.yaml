@@ -5,7 +5,7 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: planck_right
   - board: planck_left
-    snippet: nrf52840-nosd
+    snippet: studio-rpc-usb-uart;nrf52840-nosd
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: planck_left_nosd
   - board: planck_right
@@ -17,3 +17,12 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano//zmk
     shield: charybdis_right
+  - board: nice_nano//zmk
+    shield: charybdis_left
+    snippet: studio-rpc-usb-uart;nrf52840-nosd
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: charybdis_left_nosd
+  - board: nice_nano//zmk
+    shield: charybdis_right
+    snippet: nrf52840-nosd
+    artifact-name: charybdis_right_nosd
