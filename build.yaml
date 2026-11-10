@@ -11,3 +11,9 @@ include:
   - board: planck_right
     snippet: nrf52840-nosd
     artifact-name: planck_right_nosd
+  - board: nice_nano//zmk
+    shield: charybdis_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano//zmk
+    shield: charybdis_right
