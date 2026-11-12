@@ -60,7 +60,7 @@ nice_view_spi: &spi2 {
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "cormoran,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -69,7 +69,7 @@ nice_view_spi: &spi2 {
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake;
-        force-awake-4ms-mode;
+        settings-id = "ball";
     };
 };
 

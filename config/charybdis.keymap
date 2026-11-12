@@ -2,11 +2,13 @@
 #define ZMK_BEHAVIORS_KEEP_ALL
 #endif
 #include <behaviors.dtsi>
+#include <behaviors/runtime_macro.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/input/input-event-codes.h>
 
 / {
     behaviors {
@@ -209,3 +211,26 @@
         };
     };
 };
+
+// ---------------------------------------------------------------------------
+// Trackball runtime input processors (DYA Studio "Trackball" tab)
+// ---------------------------------------------------------------------------
+
+&mouse_runtime_input_processor {
+    temp-layer-enabled;
+    temp-layer = <2>;
+    temp-layer-activation-delay-ms = <100>;
+    temp-layer-deactivation-delay-ms = <1000>;
+};
+
+&scroll_runtime_input_processor {
+    active-layers = <BIT(3)>;
+    x-codes = <INPUT_REL_X>;
+    y-codes = <INPUT_REL_Y>;
+    xy-to-scroll-enabled;
+    y-invert;
+    scale-multiplier = <1>;
+    scale-divisor = <10>;
+    axis-snap-threshold = <100>;
+};
+

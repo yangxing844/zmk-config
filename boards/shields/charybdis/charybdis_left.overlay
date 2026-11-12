@@ -6,9 +6,6 @@
 
 #include "charybdis.dtsi"
 
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
-
 &kscan0 {
     col-gpios
         = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -22,19 +19,5 @@
 
 &pmw_listener {
     status = "okay";
-
-    // When layer 3 (scroll) is active, the trackball acts as a scroll wheel
-    scroller {
-        layers = <3>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT) &zip_xy_scaler 1 10 &zip_xy_to_scroll_mapper>;
-    };
-
-    // When layer 4 (snipe) is active, slow down cursor speed for precision
-    snipe {
-        layers = <4>;
-        input-processors = <&zip_xy_scaler 1 3>;
-    };
-
-    // Activate auto-mouse layer 2 for 1000ms when the trackball moves
-    input-processors = <&zip_temp_layer 2 1000>;
 };
+

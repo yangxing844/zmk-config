@@ -73,5 +73,38 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&pmw_split>;
+
+        // The runtime input processors DYA Studio configures
+        input-processors = <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
+
+        // When layer 3 (scroll) is active, the trackball acts as a scroll wheel
+        scroller {
+            layers = <3>;
+            input-processors = <&scroll_runtime_input_processor>;
+        };
+
+        // When layer 4 (snipe) is active, slow down cursor speed for precision
+        snipe {
+            layers = <4>;
+            input-processors = <&zip_xy_scaler 1 3 &mouse_runtime_input_processor>;
+        };
+    };
+
+    // Trackball marker for the DYA Studio layout preview
+    trackball_layout: trackball_layout {
+        compatible = "cormoran,physical-layout-trackball";
+        display-name = "Trackball";
+        size = <180>;
+        x = <980>;
+        y = <430>;
+
+        linked-device-identifiers = "mouse", "scroll";
+        linked-subsystems = "cormoran_rip", "cormoran_rip";
     };
 };
+
+// Must come after the matrix transform above: the runtime input processor
+// definitions pull in dt-bindings/zmk/keys.h, which redefines RC(keycode)
+#include <input/processors.dtsi>
+#include <input/processors/runtime-input-processor.dtsi>
+

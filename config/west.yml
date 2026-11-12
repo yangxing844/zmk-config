@@ -2,14 +2,16 @@ manifest:
   remotes:
     - name: zmk
       url-base: https://github.com/zmkfirmware
+    - name: cormoran
+      url-base: https://github.com/cormoran
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: yangxing
       url-base: https://github.com/yangxing844
   projects:
     - name: zmk
-      remote: zmk
-      revision: main
+      remote: cormoran
+      revision: main+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
@@ -17,5 +19,44 @@ manifest:
     - name: zmk-lpm009m360a-driver
       remote: yangxing
       revision: master
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
+    - name: zmk-feature-module-physical-layout
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: main
   self:
     path: config
